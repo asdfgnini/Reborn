@@ -1,0 +1,107 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-src-Debug-af9d0dd3b547ff9e4f7c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TaoTools"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "TAOTOOLS",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "TaoTools::@145eef247bfb46b6828c",
+					"jsonFile" : "target-TaoTools-Debug-1655f45f7efa0deb73d6.json",
+					"name" : "TaoTools",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "TaoTools_autogen::@145eef247bfb46b6828c",
+					"jsonFile" : "target-TaoTools_autogen-Debug-50cee6a663781de0758b.json",
+					"name" : "TaoTools_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "TaoTools_autogen_timestamp_deps::@145eef247bfb46b6828c",
+					"jsonFile" : "target-TaoTools_autogen_timestamp_deps-Debug-cf7f48db87600301a725.json",
+					"name" : "TaoTools_autogen_timestamp_deps",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/zhoux/Desktop/Qt/Taotools/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug",
+		"source" : "C:/Users/zhoux/Desktop/Qt/Taotools"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

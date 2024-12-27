@@ -1,0 +1,20 @@
+# ninja log v6
+36	197	7569935515144098	src/TaoTools_autogen/timestamp	35a9b43b87ca12d
+198	347	7569935516770783	CMakeFiles/install.util	be5c646740f7f872
+36	197	7569935515144098	C:/Users/zhoux/Desktop/Qt/Taotools/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/src/TaoTools_autogen/mocs_compilation.cpp	35a9b43b87ca12d
+36	197	7569935515144098	src/TaoTools_autogen/mocs_compilation.cpp	35a9b43b87ca12d
+468	1479	7569927345723201	src/CMakeFiles/TaoTools.dir/TaoGraphicsView.cpp.obj	2e67495deb9b4358
+36	197	7569935515144098	C:/Users/zhoux/Desktop/Qt/Taotools/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/src/TaoTools_autogen/timestamp	35a9b43b87ca12d
+465	1381	7569927345693212	src/CMakeFiles/TaoTools.dir/TaoTools_autogen/mocs_compilation.cpp.obj	7b3f267614254437
+471	1378	7569927345743214	src/CMakeFiles/TaoTools.dir/private/TaoGraphicsViewPrivate.cpp.obj	bf77a4bf05a2073b
+18	40	7569927290674189	CMakeFiles/clean.additional	baedbe210acaa455
+1479	1600	7569927356961218	src/TaoTools.dll	4cf56e3b058c3b9c
+1479	1600	7569927356961218	src/libTaoTools.dll.a	4cf56e3b058c3b9c
+40	48	7569927290894134	clean	577b940aee94fbd7
+15	443	7569936423077388	build.ninja	ecb5d5f54fda7ef6
+22	140	7569936572251423	src/TaoTools_autogen/timestamp	35a9b43b87ca12d
+22	140	7569936572251423	src/TaoTools_autogen/mocs_compilation.cpp	35a9b43b87ca12d
+22	140	7569936572251423	C:/Users/zhoux/Desktop/Qt/Taotools/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/src/TaoTools_autogen/timestamp	35a9b43b87ca12d
+22	140	7569936572251423	C:/Users/zhoux/Desktop/Qt/Taotools/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/src/TaoTools_autogen/mocs_compilation.cpp	35a9b43b87ca12d
+141	180	7569936573439742	CMakeFiles/install.util	be5c646740f7f872
+22	56	7569937169175803	CMakeFiles/install.util	be5c646740f7f872

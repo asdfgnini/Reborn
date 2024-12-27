@@ -1,0 +1,8 @@
+C:/Users/zhoux/Desktop/Qt/Taotools/install/lib/libTaoTools.dll.a
+C:/Users/zhoux/Desktop/Qt/Taotools/install/bin/TaoTools.dll
+C:/Users/zhoux/Desktop/Qt/Taotools/install/include/TaoGraphicsView.h
+C:/Users/zhoux/Desktop/Qt/Taotools/install/include/singleton.h
+C:/Users/zhoux/Desktop/Qt/Taotools/install/include/stdafx.h
+C:/Users/zhoux/Desktop/Qt/Taotools/build/Desktop_Qt_5_15_2_MinGW_64_bit-Debug/TaoTools.dll
+C:/Users/zhoux/Desktop/Qt/Taotools/install/lib/cmake/TaoToolsConfig.cmake
+C:/Users/zhoux/Desktop/Qt/Taotools/install/lib/cmake/TaoToolsConfigVersion.cmake

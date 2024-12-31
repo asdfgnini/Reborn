@@ -7,24 +7,8 @@
 #include <QMutex>
 #include <QVector>
 #include "../include/CircularBuffer.h"
+#include "../include/HttpClient.h"
 
-// Scan_Data 结构体定义
-struct Scan_Data {
-    int AMU_Start;
-    int AMU_Stop;
-    float Ppamu;
-    int Dwell;
-    bool Scan_Switch;
-    int Current_Scan_Number;
-    float Current_TotalPressure;
-    float Current_Baseline;
-    float Current_TPQuad;
-    int Scan_size;
-    int Start_Point;
-    int Cur_Data_Size;
-    int Data_Load_Heavy;
-    QList<double> Scan_data_List;
-};
 
 
 
@@ -46,6 +30,7 @@ private slots:
 private:
     void fetchData();    // 模拟获取数据
     void parseData();    // 解析数据
+    void onDataFetched(const QVariantMap &data);
 
 private:
     QThread *m_pThread;       // 子线程
@@ -53,6 +38,7 @@ private:
     Scan_Data m_currentScanData; // 存储扫描数据
     QMutex m_mutex;           // 互斥锁，保护共享资源
     CircularBuffer<Scan_Data> m_buffer; //环形缓冲区 默认大小100
+    HttpClient* m_httpclient;
 };
 
 

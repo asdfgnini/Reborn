@@ -1,0 +1,1425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RB_RGA</class>
+ <widget class="QMainWindow" name="RB_RGA">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1027</width>
+    <height>373</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>RB_RGA</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(10, 22, 46);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="maximumSize">
+       <size>
+        <width>360</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget{
+	background-color: rgb(1, 32, 79);
+    border-radius: 5px; 
+    
+	color: rgb(255, 255, 255);
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="Scan_widget" native="true">
+         <property name="styleSheet">
+          <string notr="true">#Scan_widget{
+	background-color: rgb(1, 32, 79);
+    border-radius: 5px; 
+  border:2px solid rgb(255, 255, 255);
+}</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>10</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QWidget" name="Scan_Seting_widget" native="true">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QWidget
+{
+background-color: rgb(23, 56, 101);
+font: 15pt &quot;Microsoft YaHei UI&quot;;
+}
+QcomboBox
+{
+background-color: rgb(58, 143, 255);
+}
+QLabel::disabled
+{
+color:rgb(158, 158, 158)
+
+}
+
+</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <property name="spacing">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="title">
+               <property name="styleSheet">
+                <string notr="true">font: 700 16pt &quot;Microsoft YaHei UI&quot;;</string>
+               </property>
+               <property name="text">
+                <string>扫描设置</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="line_3">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#line_3
+{
+background-color: rgb(255, 255, 255);
+}
+
+#line_3::disabled
+{
+background-color: rgb(158, 158, 158);
+}</string>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="Scan_Setting_item" native="true">
+               <property name="styleSheet">
+                <string notr="true">font: 14pt &quot;Microsoft YaHei UI&quot;;</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_6">
+                <property name="spacing">
+                 <number>15</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>5</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>5</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="AMU_Range" native="true">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">
+QSpinBox
+{
+  border:1px solid rgb(255, 255, 255);
+background-color: rgb(58, 143, 255);
+
+}
+QSpinBox::disabled
+{
+ background-color: rgb(23, 56, 101);
+  border:1px solid rgb(158, 158, 158);
+color:rgb(158, 158, 158);
+
+}</string>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_16">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_21">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>100</horstretch>
+                       <verstretch>30</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Microsoft YaHei UI</family>
+                       <pointsize>14</pointsize>
+                       <italic>false</italic>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="text">
+                      <string>质谱范围：</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="AMU_Start_spinBox">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>90</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::ClickFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                     <property name="buttonSymbols">
+                      <enum>QAbstractSpinBox::NoButtons</enum>
+                     </property>
+                     <property name="suffix">
+                      <string> Amu</string>
+                     </property>
+                     <property name="prefix">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_22">
+                     <property name="enabled">
+                      <bool>true</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>15</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>15</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>-</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="AMU_Stop_spinBox">
+                     <property name="enabled">
+                      <bool>true</bool>
+                     </property>
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>90</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::ClickFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                     <property name="buttonSymbols">
+                      <enum>QAbstractSpinBox::NoButtons</enum>
+                     </property>
+                     <property name="suffix">
+                      <string> Amu</string>
+                     </property>
+                     <property name="prefix">
+                      <string/>
+                     </property>
+                     <property name="maximum">
+                      <number>200</number>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="PPamu_Range" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_17">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_23">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Microsoft YaHei UI</family>
+                       <pointsize>14</pointsize>
+                       <italic>false</italic>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="text">
+                      <string>分辨率：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="PPamu">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="layoutDirection">
+                      <enum>Qt::LeftToRight</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">
+QComboBox{
+ background-color: rgb(58, 143, 255);
+  border:1px solid rgb(255, 255, 255);
+  border-radius:5px;
+} 
+
+QComboBox::drop-down {
+	background-color: rgb(23, 56, 101);
+    width: 15px;/*设置按钮范围宽度*/
+   border-radius: 5px;
+}
+
+QComboBox::down-arrow {
+	border-image: url(:/new/prefix1/icon/down_arrow.png);/*自定义图片填充*/
+	width: 10px;/*设置该图标的宽高*/
+	height: 10px;
+}
+
+QComboBox QAbstractItemView {
+ background-color: rgb(58, 143, 255);
+
+}
+
+/* 下拉后，整个下拉窗体每项的样式 */
+QComboBox QAbstractItemView::item {
+ background-color: rgb(58, 143, 255);
+
+}
+
+QComboBox QAbstractItemView::item:selected {
+    color: #FFFFF0;
+	background-color: rgb(0, 85, 200);
+}
+QComboBox::disabled
+{
+ background-color: rgb(23, 56, 101);
+  border:1px solid rgb(158, 158, 158);
+color:rgb(158, 158, 158);
+
+}</string>
+                     </property>
+                     <property name="sizeAdjustPolicy">
+                      <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QWidget" name="Dwell_Range" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_18">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_24">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>100</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>100</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Microsoft YaHei UI</family>
+                       <pointsize>14</pointsize>
+                       <italic>false</italic>
+                       <bold>false</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
+                     </property>
+                     <property name="text">
+                      <string>扫描时间：</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="Dwell">
+                     <property name="enabled">
+                      <bool>true</bool>
+                     </property>
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="layoutDirection">
+                      <enum>Qt::LeftToRight</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">
+QComboBox{
+ background-color: rgb(58, 143, 255);
+  border:1px solid rgb(255, 255, 255);
+  border-radius:5px;
+} 
+
+QComboBox::drop-down {
+	background-color: rgb(23, 56, 101);
+    width: 15px;/*设置按钮范围宽度*/
+   border-radius: 5px;
+}
+
+QComboBox::down-arrow {
+	border-image: url(:/new/prefix1/icon/down_arrow.png);/*自定义图片填充*/
+	width: 10px;/*设置该图标的宽高*/
+	height: 10px;
+}
+
+QComboBox QAbstractItemView {
+ background-color: rgb(58, 143, 255);
+
+}
+
+/* 下拉后，整个下拉窗体每项的样式 */
+QComboBox QAbstractItemView::item {
+ background-color: rgb(58, 143, 255);
+
+}
+
+
+
+QComboBox QAbstractItemView::item:selected {
+    color: #FFFFF0;
+	background-color: rgb(0, 85, 200);
+}
+
+QComboBox::disabled
+{
+ background-color: rgb(23, 56, 101);
+  border:1px solid rgb(158, 158, 158);
+color:rgb(158, 158, 158);
+
+}
+</string>
+                     </property>
+                     <property name="sizeAdjustPolicy">
+                      <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QWidget" name="Control_widget" native="true">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <property name="spacing">
+              <number>4</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="Emission_pushButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    /* 正常状态下的样式 */
+    background-color: rgb(23, 56, 101);/* 正常状态下的背景颜色 */
+    border-radius: 5px; 
+}
+
+QPushButton:hover {
+    /* 鼠标悬停状态下的样式 */
+    background-color:rgb(32, 77, 136); /* 悬停状态下的背景颜色 */
+}</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="icon.qrc">
+                 <normaloff>:/new/prefix1/icon/Lamp_Closed.png</normaloff>:/new/prefix1/icon/Lamp_Closed.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="EM_pushButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    /* 正常状态下的样式 */
+    background-color: rgb(23, 56, 101);/* 正常状态下的背景颜色 */
+    border-radius: 5px; 
+}
+
+QPushButton:hover {
+    /* 鼠标悬停状态下的样式 */
+    background-color:rgb(32, 77, 136); /* 悬停状态下的背景颜色 */
+}</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="icon.qrc">
+                 <normaloff>:/new/prefix1/icon/EM_Operation.png</normaloff>:/new/prefix1/icon/EM_Operation.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="Scan_pushButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>140</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>140</width>
+                 <height>50</height>
+                </size>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton {
+    /* 正常状态下的样式 */
+	font: 700 16pt &quot;Microsoft YaHei UI&quot;;
+ color:rgb(255, 255, 255);
+    background-color: rgb(23, 56, 101);/* 正常状态下的背景颜色 */
+    border-radius: 5px; 
+}
+
+QPushButton:hover {
+    /* 鼠标悬停状态下的样式 */
+    background-color:rgb(32, 77, 136); /* 悬停状态下的背景颜色 */
+}</string>
+               </property>
+               <property name="text">
+                <string>开始扫描</string>
+               </property>
+               <property name="icon">
+                <iconset resource="icon.qrc">
+                 <normaloff>:/new/prefix1/icon/Start.png</normaloff>:/new/prefix1/icon/Start.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget_3" native="true">
+      <property name="styleSheet">
+       <string notr="true">QWidget{
+	background-color: rgb(10, 22, 46);
+    border-radius: 5px; 
+    
+	color: rgb(255, 255, 255);
+}</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,10">
+       <property name="leftMargin">
+        <number>6</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>6</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QWidget" name="RGA_State" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>95</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>95</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QWidget{
+	background-color: rgb(1, 32, 79);
+    border-radius: 5px; 
+	color: rgb(255, 255, 255);
+}
+
+#RGA_State{border:2px solid rgb(255, 255, 255)}</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QWidget" name="Start_AMU_Display" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QWidget
+{
+background-color: rgb(23, 56, 101);
+font: 15pt &quot;Microsoft YaHei UI&quot;;
+}
+
+#Start_AMU_Display{border:2px solid rgb(255, 255, 255)}</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_9" stretch="3,0,8">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>4</number>
+             </property>
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <property name="rightMargin">
+              <number>4</number>
+             </property>
+             <property name="bottomMargin">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="title_4">
+               <property name="styleSheet">
+                <string notr="true">font: 700 14pt &quot;Microsoft YaHei UI&quot;;</string>
+               </property>
+               <property name="text">
+                <string>起始质谱</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="line_5">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#line_5
+{
+background-color: rgb(255, 255, 255);
+}
+
+#line_5::disabled
+{
+background-color: rgb(158, 158, 158);
+}</string>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Start_AMU_Value">
+               <property name="styleSheet">
+                <string notr="true">font: 700 16pt &quot;Microsoft YaHei UI&quot;;</string>
+               </property>
+               <property name="text">
+                <string>-</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="Stop_AMU_Display" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QWidget
+{
+background-color: rgb(23, 56, 101);
+font: 15pt &quot;Microsoft YaHei UI&quot;;
+}
+
+#Stop_AMU_Display{border:2px solid rgb(255, 255, 255)}</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_10" stretch="3,0,8">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>4</number>
+             </property>
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <property name="rightMargin">
+              <number>4</number>
+             </property>
+             <property name="bottomMargin">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="title_6">
+               <property name="styleSheet">
+                <string notr="true">font: 700 14pt &quot;Microsoft YaHei UI&quot;;</string>
+               </property>
+               <property name="text">
+                <string>终止质谱</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="line_6">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#line_6
+{
+background-color: rgb(255, 255, 255);
+}
+
+#line_6::disabled
+{
+background-color: rgb(158, 158, 158);
+}</string>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Stop_AMU_Value">
+               <property name="styleSheet">
+                <string notr="true">font: 700 16pt &quot;Microsoft YaHei UI&quot;;</string>
+               </property>
+               <property name="text">
+                <string>-</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="Ppamu_Display" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QWidget
+{
+background-color: rgb(23, 56, 101);
+font: 15pt &quot;Microsoft YaHei UI&quot;;
+}
+
+#Ppamu_Display{border:2px solid rgb(255, 255, 255)}</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_11" stretch="3,0,8">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>4</number>
+             </property>
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <property name="rightMargin">
+              <number>4</number>
+             </property>
+             <property name="bottomMargin">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="title_8">
+               <property name="styleSheet">
+                <string notr="true">font: 700 14pt &quot;Microsoft YaHei UI&quot;;</string>
+               </property>
+               <property name="text">
+                <string>分辨率</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="line_7">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#line_7
+{
+background-color: rgb(255, 255, 255);
+}
+
+#line_7::disabled
+{
+background-color: rgb(158, 158, 158);
+}</string>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Ppamu_Value">
+               <property name="styleSheet">
+                <string notr="true">font: 700 16pt &quot;Microsoft YaHei UI&quot;;</string>
+               </property>
+               <property name="text">
+                <string>-</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>198</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QWidget" name="Scan_Number_Display" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QWidget
+{
+background-color: rgb(23, 56, 101);
+font: 15pt &quot;Microsoft YaHei UI&quot;;
+}
+
+
+
+#Scan_Number_Display{border:2px solid rgb(255, 255, 255)}</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_12" stretch="3,0,8">
+             <property name="leftMargin">
+              <number>4</number>
+             </property>
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <property name="rightMargin">
+              <number>4</number>
+             </property>
+             <property name="bottomMargin">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="title_10">
+               <property name="styleSheet">
+                <string notr="true">font: 700 14pt &quot;Microsoft YaHei UI&quot;;</string>
+               </property>
+               <property name="text">
+                <string>扫描轮次</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="line_8">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#line_8
+{
+background-color: rgb(255, 255, 255);
+}
+
+#line_8::disabled
+{
+background-color: rgb(158, 158, 158);
+}</string>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Scan_Number_Value">
+               <property name="styleSheet">
+                <string notr="true">font: 700 16pt &quot;Microsoft YaHei UI&quot;;</string>
+               </property>
+               <property name="text">
+                <string>-</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="Tol_Pressure_Display" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>100</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QWidget
+{
+background-color: rgb(23, 56, 101);
+font: 15pt &quot;Microsoft YaHei UI&quot;;
+}
+
+
+#Tol_Pressure_Display{border:2px solid rgb(255, 255, 255)}</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_8" stretch="3,0,8">
+             <property name="leftMargin">
+              <number>4</number>
+             </property>
+             <property name="topMargin">
+              <number>4</number>
+             </property>
+             <property name="rightMargin">
+              <number>4</number>
+             </property>
+             <property name="bottomMargin">
+              <number>4</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="title_2">
+               <property name="styleSheet">
+                <string notr="true">font: 700 14pt &quot;Microsoft YaHei UI&quot;;</string>
+               </property>
+               <property name="text">
+                <string>总压强</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="line_4">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#line_4
+{
+background-color: rgb(255, 255, 255);
+}
+
+#line_4::disabled
+{
+background-color: rgb(158, 158, 158);
+}</string>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="lineWidth">
+                <number>1</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Tol_Pressure_Value">
+               <property name="styleSheet">
+                <string notr="true">font: 700 16pt &quot;Microsoft YaHei UI&quot;;</string>
+               </property>
+               <property name="text">
+                <string>-</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="Chart_Display" native="true">
+         <property name="styleSheet">
+          <string notr="true">QWidget{
+	background-color: rgb(28, 28, 30);
+    border-radius: 5px; 
+	color: rgb(255, 255, 255);
+}
+
+#Chart_Display{
+	background-color: rgb(28, 28, 30);
+    border-radius: 5px; 
+     border:1px solid rgb(255, 255, 255);
+	color: rgb(255, 255, 255);
+}</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_14" stretch="1,1">
+          <item>
+           <layout class="QVBoxLayout" name="AMU_Chart_verticalLayout"/>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="Chart_verticalLayout"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>

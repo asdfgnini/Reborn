@@ -1,0 +1,44 @@
+[
+{
+  "directory": "C:/Users/zhoux/Desktop/vscode/17RGA/build/src",
+  "command": "D:\\Qt\\Tools\\llvm-mingw1706_64\\bin\\clang++.exe -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/17RGA.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\17RGA.dir\\17RGA_autogen\\mocs_compilation.cpp.obj -c C:\\Users\\zhoux\\Desktop\\vscode\\17RGA\\build\\src\\17RGA_autogen\\mocs_compilation.cpp",
+  "file": "C:/Users/zhoux/Desktop/vscode/17RGA/build/src/17RGA_autogen/mocs_compilation.cpp",
+  "output": "src/CMakeFiles/17RGA.dir/17RGA_autogen/mocs_compilation.cpp.obj"
+},
+{
+  "directory": "C:/Users/zhoux/Desktop/vscode/17RGA/build/src",
+  "command": "D:\\Qt\\Tools\\llvm-mingw1706_64\\bin\\clang++.exe -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/17RGA.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\17RGA.dir\\data\\CustomFile.cpp.obj -c C:\\Users\\zhoux\\Desktop\\vscode\\17RGA\\src\\data\\CustomFile.cpp",
+  "file": "C:/Users/zhoux/Desktop/vscode/17RGA/src/data/CustomFile.cpp",
+  "output": "src/CMakeFiles/17RGA.dir/data/CustomFile.cpp.obj"
+},
+{
+  "directory": "C:/Users/zhoux/Desktop/vscode/17RGA/build/src",
+  "command": "D:\\Qt\\Tools\\llvm-mingw1706_64\\bin\\clang++.exe -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/17RGA.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\17RGA.dir\\data\\HttpClient.cpp.obj -c C:\\Users\\zhoux\\Desktop\\vscode\\17RGA\\src\\data\\HttpClient.cpp",
+  "file": "C:/Users/zhoux/Desktop/vscode/17RGA/src/data/HttpClient.cpp",
+  "output": "src/CMakeFiles/17RGA.dir/data/HttpClient.cpp.obj"
+},
+{
+  "directory": "C:/Users/zhoux/Desktop/vscode/17RGA/build/src",
+  "command": "D:\\Qt\\Tools\\llvm-mingw1706_64\\bin\\clang++.exe -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/17RGA.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\17RGA.dir\\data\\RGAData.cpp.obj -c C:\\Users\\zhoux\\Desktop\\vscode\\17RGA\\src\\data\\RGAData.cpp",
+  "file": "C:/Users/zhoux/Desktop/vscode/17RGA/src/data/RGAData.cpp",
+  "output": "src/CMakeFiles/17RGA.dir/data/RGAData.cpp.obj"
+},
+{
+  "directory": "C:/Users/zhoux/Desktop/vscode/17RGA/build/src",
+  "command": "D:\\Qt\\Tools\\llvm-mingw1706_64\\bin\\clang++.exe -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/17RGA.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\17RGA.dir\\main.cpp.obj -c C:\\Users\\zhoux\\Desktop\\vscode\\17RGA\\src\\main.cpp",
+  "file": "C:/Users/zhoux/Desktop/vscode/17RGA/src/main.cpp",
+  "output": "src/CMakeFiles/17RGA.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/zhoux/Desktop/vscode/17RGA/build/src",
+  "command": "D:\\Qt\\Tools\\llvm-mingw1706_64\\bin\\clang++.exe -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/17RGA.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\17RGA.dir\\ui\\CustomUI.cpp.obj -c C:\\Users\\zhoux\\Desktop\\vscode\\17RGA\\src\\ui\\CustomUI.cpp",
+  "file": "C:/Users/zhoux/Desktop/vscode/17RGA/src/ui/CustomUI.cpp",
+  "output": "src/CMakeFiles/17RGA.dir/ui/CustomUI.cpp.obj"
+},
+{
+  "directory": "C:/Users/zhoux/Desktop/vscode/17RGA/build/src",
+  "command": "D:\\Qt\\Tools\\llvm-mingw1706_64\\bin\\clang++.exe -DQT_CONCURRENT_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_PRINTSUPPORT_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64 @CMakeFiles/17RGA.dir/includes_CXX.rsp -g -std=gnu++17 -pthread -o CMakeFiles\\17RGA.dir\\ui\\qcustomplot.cpp.obj -c C:\\Users\\zhoux\\Desktop\\vscode\\17RGA\\src\\ui\\qcustomplot.cpp",
+  "file": "C:/Users/zhoux/Desktop/vscode/17RGA/src/ui/qcustomplot.cpp",
+  "output": "src/CMakeFiles/17RGA.dir/ui/qcustomplot.cpp.obj"
+}
+]

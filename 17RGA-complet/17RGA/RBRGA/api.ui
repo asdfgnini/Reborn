@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>API</class>
+ <widget class="QWidget" name="API">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>677</width>
+    <height>562</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="rowCount">
+      <number>35</number>
+     </property>
+     <property name="columnCount">
+      <number>2</number>
+     </property>
+     <attribute name="horizontalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <attribute name="horizontalHeaderMinimumSectionSize">
+      <number>200</number>
+     </attribute>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <row/>
+     <column/>
+     <column/>
+     <item row="0" column="0">
+      <property name="text">
+       <string>重置是否发生</string>
+      </property>
+     </item>
+     <item row="0" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="1" column="0">
+      <property name="text">
+       <string>Versiscan是否激活</string>
+      </property>
+     </item>
+     <item row="1" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="2" column="0">
+      <property name="text">
+       <string>RF生成器是否总是重新共振</string>
+      </property>
+     </item>
+     <item row="2" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="3" column="0">
+      <property name="text">
+       <string>RF板温度补偿设定点是否开启</string>
+      </property>
+     </item>
+     <item row="3" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="4" column="0">
+      <property name="text">
+       <string>EM等效离子电流是否开启</string>
+      </property>
+     </item>
+     <item row="4" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="5" column="0">
+      <property name="text">
+       <string>离子源标准化是否开启</string>
+      </property>
+     </item>
+     <item row="5" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="6" column="0">
+      <property name="text">
+       <string>RF板增益和偏移补偿是否开启</string>
+      </property>
+     </item>
+     <item row="6" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="7" column="0">
+      <property name="text">
+       <string>RF频率变化补偿是否开启</string>
+      </property>
+     </item>
+     <item row="7" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="8" column="0">
+      <property name="text">
+       <string>RF生成器高功率是否重新共振</string>
+      </property>
+     </item>
+     <item row="8" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="9" column="0">
+      <property name="text">
+       <string>基线校正是否开启</string>
+      </property>
+     </item>
+     <item row="9" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="10" column="0">
+      <property name="text">
+       <string>单次基线测量计划是否开启</string>
+      </property>
+     </item>
+     <item row="10" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="11" column="0">
+      <property name="text">
+       <string>连续基线测量计划是否开启</string>
+      </property>
+     </item>
+     <item row="11" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="12" column="0">
+      <property name="text">
+       <string>峰位校正是否开启</string>
+      </property>
+     </item>
+     <item row="12" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="13" column="0">
+      <property name="text">
+       <string>峰位测量计划是否开启</string>
+      </property>
+     </item>
+     <item row="13" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="14" column="0">
+      <property name="text">
+       <string>总压基部分压线性化是否开启</string>
+      </property>
+     </item>
+     <item row="14" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="15" column="0">
+      <property name="text">
+       <string>电表温度补偿是否开启</string>
+      </property>
+     </item>
+     <item row="15" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="16" column="0">
+      <property name="text">
+       <string>状态继电器是否开启</string>
+      </property>
+     </item>
+     <item row="16" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="17" column="0">
+      <property name="text">
+       <string>数据平滑是否开启</string>
+      </property>
+     </item>
+     <item row="17" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="18" column="0">
+      <property name="text">
+       <string>峰顶展宽是否开启</string>
+      </property>
+     </item>
+     <item row="18" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="19" column="0">
+      <property name="text">
+       <string>保留位</string>
+      </property>
+     </item>
+     <item row="19" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="20" column="0">
+      <property name="text">
+       <string>是否使用全局离子能量</string>
+      </property>
+     </item>
+     <item row="20" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="21" column="0">
+      <property name="text">
+       <string>电子倍增器互锁是否激活</string>
+      </property>
+     </item>
+     <item row="21" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="22" column="0">
+      <property name="text">
+       <string>电子倍增器请求是否待处理</string>
+      </property>
+     </item>
+     <item row="22" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="23" column="0">
+      <property name="text">
+       <string>电子倍增器是否开启</string>
+      </property>
+     </item>
+     <item row="23" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="24" column="0">
+      <property name="text">
+       <string>极板极性是否反转</string>
+      </property>
+     </item>
+     <item row="24" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="25" column="0">
+      <property name="text">
+       <string>RF生成器是否开启</string>
+      </property>
+     </item>
+     <item row="25" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="26" column="0">
+      <property name="text">
+       <string>是否选择了特定的灯丝</string>
+      </property>
+     </item>
+     <item row="26" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="27" column="0">
+      <property name="text">
+       <string>发射互锁是否激活</string>
+      </property>
+     </item>
+     <item row="27" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="28" column="0">
+      <property name="text">
+       <string>发射请求是否待处理</string>
+      </property>
+     </item>
+     <item row="28" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="29" column="0">
+      <property name="text">
+       <string>发射灯丝是否处于除气模式</string>
+      </property>
+     </item>
+     <item row="29" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="30" column="0">
+      <property name="text">
+       <string>发射灯丝是否处于恒功率模式</string>
+      </property>
+     </item>
+     <item row="30" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="31" column="0">
+      <property name="text">
+       <string>发射灯丝是否处于调节电流模式</string>
+      </property>
+     </item>
+     <item row="31" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="32" column="0">
+      <property name="text">
+       <string>灯丝1状态</string>
+      </property>
+     </item>
+     <item row="32" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="33" column="0">
+      <property name="text">
+       <string>灯丝2状态</string>
+      </property>
+     </item>
+     <item row="33" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+     <item row="34" column="0">
+      <property name="text">
+       <string>总</string>
+      </property>
+     </item>
+     <item row="34" column="1">
+      <property name="text">
+       <string>-1</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

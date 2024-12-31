@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>showItem</class>
+ <widget class="QWidget" name="showItem">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>348</width>
+    <height>85</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>348</width>
+    <height>85</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>348</width>
+    <height>85</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>showItem</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget
+{
+background-color: rgb(23, 56, 101);
+font: 8pt &quot;Microsoft YaHei UI&quot;;
+border-radius: 7px; 
+}
+
+#label_time{
+    font-size: 14px;  
+}
+
+QPushButton {
+    /* 正常状态下的样式 */
+ 	color:rgb(255, 255, 255);
+    background-color: rgb(23, 56, 101);/* 正常状态下的背景颜色 */
+    border-radius: 5px; 
+}
+
+QPushButton:hover {
+    /* 鼠标悬停状态下的样式 */
+    background-color:rgb(32, 77, 136); /* 悬停状态下的背景颜色 */
+}
+
+</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_3">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="spacing">
+      <number>2</number>
+     </property>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>2</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>1</number>
+         </property>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_name">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>70</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>90</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(85, 170, 255);
+
+    border-radius: 5px; 
+  border:2px solid rgb(255, 255, 255);
+color: rgb(255, 255, 255);
+background-color: rgb(53, 99, 149);
+</string>
+           </property>
+           <property name="text">
+            <string>MYRGA</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_SNL">
+           <property name="minimumSize">
+            <size>
+             <width>120</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(85, 170, 255);
+
+    border-radius: 5px; 
+  border:2px solid rgb(255, 255, 255);
+color: rgb(255, 255, 255);
+background-color: rgb(53, 99, 149);
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_time">
+         <property name="minimumSize">
+          <size>
+           <width>110</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>300</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(85, 170, 255);
+
+    border-radius: 5px; 
+  border:2px solid rgb(255, 255, 255);
+color: rgb(255, 255, 255);
+background-color: rgb(53, 99, 149);
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="horizontalSpacing">
+        <number>1</number>
+       </property>
+       <property name="verticalSpacing">
+        <number>6</number>
+       </property>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="check_1_2">
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="toolTipDuration">
+          <number>-1</number>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="check_1_4">
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="check_1_1">
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="toolTipDuration">
+          <number>-1</number>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="check_1_3">
+         <property name="minimumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="toolTipDuration">
+          <number>-1</number>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="check_2">
+       <property name="minimumSize">
+        <size>
+         <width>65</width>
+         <height>65</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>65</width>
+         <height>65</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+	background-color: rgb(255, 255, 255);
+}
+QPushButton {
+    /* 正常状态下的样式 */
+	font: 700 14pt &quot;Microsoft YaHei UI&quot;;
+ 	color:rgb(255, 255, 255);
+    background-color: rgb(255,255, 255);/* 正常状态下的背景颜色 */
+    border-radius: 5px; 
+}
+#check_2{background:transparent;}
+QPushButton:hover {
+    /* 鼠标悬停状态下的样式 */
+    background-color:rgb(180, 180, 180); /* 悬停状态下的背景颜色 */
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

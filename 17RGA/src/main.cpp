@@ -3,8 +3,6 @@
 #include <QVBoxLayout>
 #include "include/qcustomplot.h"
 #include "include/RGAData.h"
-#include "include/CustomUI.h"
-
 class MyWidget : public QWidget {
 public:
     MyWidget(QWidget *parent = nullptr) : QWidget(parent) {
@@ -70,7 +68,6 @@ public:
 };
 
 
-
 int main(int argc, char *argv[]) 
 {
     // 初始化 Qt 应用程序
@@ -78,14 +75,13 @@ int main(int argc, char *argv[])
     
     qDebug() << "MAIN  is running in thread:" << QThread::currentThreadId();
 
-    // 创建 RGAData 类实例
-    RGAData rgaData;
-    
-    // 创建 CustomUI 实例，并将 rgaData 传递给它
-    CustomUI ui;
 
-    ui.show();
+    RGAData rga;
+    rga.start();
 
+
+   
+    int result = app.exec();
     // 进入事件循环
-    return app.exec();
+    return result;
 }

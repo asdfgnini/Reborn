@@ -1,120 +1,81 @@
-// HttpClient.cpp
 #include "../include/HttpClient.h"
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QDebug>
+#include <QMutex>
+#include <QMutexLocker>
 #include <QThread>
 
-
-HttpClient::HttpClient(QObject *parent)
-    : QObject(parent), m_manager(new QNetworkAccessManager(this)),m_isRequestInProgress(false)
+// HttpClient 实现
+HttpClient::HttpClient(QObject* parent)
+    : QObject(parent),
+      m_manager(new QNetworkAccessManager(this)),
+      m_mutex(new QMutex())  // 创建互斥锁
 {
-    connect(m_manager, &QNetworkAccessManager::finished, this, &HttpClient::onFinished);
+    // 网络请求管理器初始化
 }
 
-
-HttpClient::~HttpClient()
+void HttpClient::fetchDeviceStatus(const QString& url)
 {
-    
+    qDebug() << "HttpClient fetchDeviceStatus  is running in thread:" << QThread::currentThreadId();
+
+    // QMutexLocker locker(m_mutex);  // 加锁，确保线程安全
+    // QNetworkRequest request(QUrl{url});
+    // QNetworkReply* reply = m_manager->get(request);
+    // connect(reply, &QNetworkReply::finished, this, &HttpClient::onStatusFetched);
 }
 
-void HttpClient::fetchData(const QString &url)
+void HttpClient::fetchDeviceData(const QString& url)
 {
-    qDebug() << "HttpClient fetchData is running in thread:" << QThread::currentThreadId();
+    qDebug() << "HttpClient fetchDeviceData  is running in thread:" << QThread::currentThreadId();
 
-    if (m_isRequestInProgress) {
-        qDebug() << "Previous request is still in progress!";
-        return;  // 如果上一个请求还没有完成，则不发起新请求
-    }
-
-    m_isRequestInProgress = true;
-    qDebug() << "HttpClient Fetching data from URL: " << url;
-
-    QUrl qUrl(url);
-    QNetworkRequest request(qUrl);
-
-    // 发送GET请求
-    m_reply = m_manager->get(request);
-
-    // 检查 QNetworkReply 是否有效
-    if (!m_reply) 
-    {
-        qDebug() << "Error: QNetworkReply object is nullptr!";
-        m_isRequestInProgress = false;  // 请求失败，重置状态
-        return;
-    }
-
-    // 连接 finished 信号
-    connect(m_reply, &QNetworkReply::finished, this, &HttpClient::onFinished);
-
-    // 设置超时定时器
+    // QMutexLocker locker(m_mutex);  // 加锁，确保线程安全
+    // QNetworkRequest request(QUrl{url});
+    // QNetworkReply* reply = m_manager->get(request);
+    // connect(reply, &QNetworkReply::finished, this, &HttpClient::onDataFetched);
 }
 
-#include <QFile>
-#include <QTextStream>
-
-void HttpClient::onFinished()
+void HttpClient::onStatusFetched()
 {
-    qDebug() << "HttpClient onFinished is running in thread:" << QThread::currentThreadId();
-
-    // 获取 reply 对象
-    QNetworkReply *reply = qobject_cast<QNetworkReply *>(sender());
-
-    // 确保 reply 非空
+    QMutexLocker locker(m_mutex);  // 加锁，确保线程安全
+    QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
     if (!reply) {
-        qDebug() << "Error: reply is null!";
         return;
     }
 
-    if (reply->error() != QNetworkReply::NoError) {
-        qDebug() << "Error fetching data:" << reply->errorString();
+    if (reply->error() == QNetworkReply::NoError) {
+        // 解析状态数据（假设是字符串类型的 JSON 数据）
+        QString data = reply->readAll();
+        emit deviceStatusFetched(data);  // 发射状态数据获取完成的信号
     } else {
-        qDebug() << "Response received from URL:" << reply->url().toString();
-
-        // 获取响应的字节数组
-        QByteArray responseData = reply->readAll();
-        qDebug() << "Raw response data:" << responseData;
-
-        // 将响应数据保存到文件
-        saveJsonToFile(responseData);
-
-        // 从字节数组解析 JSON 数据
-        QJsonDocument doc = QJsonDocument::fromJson(responseData);
-
-        if (doc.isObject()) {
-            // 如果是 JSON 对象
-            QJsonObject jsonObj = doc.object();
-
-            // 将解析后的 JSON 转换为 QVariant 进行更好的处理
-            QVariantMap dataMap = jsonObj.toVariantMap();
-
-            // 打印解析后的 JSON 数据
-            qDebug() << "Parsed JSON object:";
-            // printJsonData(dataMap); // 递归打印数据结构
-        } else {
-            qDebug() << "Invalid JSON format!";
-        }
+        qWarning() << "Failed to fetch device status:" << reply->errorString();
     }
 
-    m_isRequestInProgress = false;  // 请求完成，重置状态
-
-    // 删除 reply
     reply->deleteLater();
 }
 
-// 将 JSON 数据写入文件
-void HttpClient::saveJsonToFile(const QByteArray &data)
+void HttpClient::onDataFetched()
 {
-    // 打开或创建文件，写入响应的 JSON 数据
-    QFile file("response_data.json");
-    if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        QTextStream out(&file);
-        out << data;  // 将 JSON 数据写入文件
-        file.close();  // 关闭文件
-        qDebug() << "JSON data saved to response_data.json";
-    } else {
-        qDebug() << "Error opening file for writing!";
+    QMutexLocker locker(m_mutex);  // 加锁，确保线程安全
+    QNetworkReply* reply = qobject_cast<QNetworkReply*>(sender());
+    if (!reply) {
+        return;
     }
+
+    if (reply->error() == QNetworkReply::NoError) {
+        // 解析数据（假设是字符串类型的 JSON 数据）
+        QString data = reply->readAll();
+        emit deviceDataFetched(data);  // 发射数据获取完成的信号
+    } else {
+        qWarning() << "Failed to fetch device data:" << reply->errorString();
+    }
+
+    reply->deleteLater();
 }
 
-
-
-
+HttpClient::~HttpClient()
+{
+    delete m_mutex;  // 销毁互斥锁
+}

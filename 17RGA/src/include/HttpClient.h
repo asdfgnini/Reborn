@@ -1,4 +1,3 @@
-// HttpClient.h
 #ifndef HTTPCLIENT_H
 #define HTTPCLIENT_H
 
@@ -10,9 +9,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QTimer>
-
-
-
+#include <QMutex>
 
 // Scan_Data 结构体定义
 struct Scan_Data {
@@ -37,26 +34,22 @@ class HttpClient : public QObject
     Q_OBJECT
 
 public:
-    explicit HttpClient(QObject *parent = nullptr);
+    explicit HttpClient(QObject* parent = nullptr);
     ~HttpClient();
-
-    // 发送GET请求并获取数据
-    void fetchData(const QString &url);
+    void fetchDeviceStatus(const QString& url);
+    void fetchDeviceData(const QString& url);
 
 signals:
-    void dataFetched(const QVariantMap &data);
+    void deviceStatusFetched(const QString& data);
+    void deviceDataFetched(const QString& data);
 
 private slots:
-    void onFinished();
+    void onStatusFetched();
+    void onDataFetched();
 
 private:
-    void saveJsonToFile(const QByteArray &data);
-
-
-    QNetworkAccessManager *m_manager;
-    bool m_isRequestInProgress;  // 请求是否正在进行的标志
-    QNetworkReply *m_reply;
-    QString m_currentUrl;  // 保存请求的 URL
+    QNetworkAccessManager* m_manager;
+    QMutex* m_mutex;  // 互斥锁，确保线程安全
 };
 
 #endif // HTTPCLIENT_H

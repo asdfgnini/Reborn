@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\17RGA.dir/objects.a
-D:\Qt\Tools\llvm-mingw1706_64\bin\llvm-ar.exe qc CMakeFiles\17RGA.dir/objects.a @CMakeFiles\17RGA.dir\objects1.rsp
-D:\Qt\Tools\llvm-mingw1706_64\bin\clang++.exe -g -Wl,--whole-archive CMakeFiles\17RGA.dir/objects.a -Wl,--no-whole-archive -o ..\17RGA.exe -Wl,--out-implib,lib17RGA.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\17RGA.dir\linkLibs.rsp

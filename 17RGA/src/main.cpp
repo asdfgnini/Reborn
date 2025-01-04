@@ -1,87 +1,56 @@
+#include <QTimer>
 #include <QApplication>
-#include <QWidget>
-#include <QVBoxLayout>
-#include "include/qcustomplot.h"
-#include "include/RGAData.h"
-class MyWidget : public QWidget {
-public:
-    MyWidget(QWidget *parent = nullptr) : QWidget(parent) {
-        // 创建 QCustomPlot 对象
-        QCustomPlot *customPlot = new QCustomPlot(this);
+#include <QDebug>
 
-        // 创建一个布局，将 QCustomPlot 添加进去
-        QVBoxLayout *layout = new QVBoxLayout(this);
-        layout->addWidget(customPlot);
+#include <QThread>
+#include "include/Mainwindow.h"
+#include "include/URLManger.h"
+#include "include/UrlGenerator.h"
 
-        // 生成数据：正弦、余弦和指数函数
-        QVector<double> x(1000), y1(1000), y2(1000), y3(1000);
-        for (int i = 0; i < 1000; ++i) {
-            x[i] = i / 1000.0 * 10 - 5;  // x轴范围是 -5 到 5
-            y1[i] = sin(x[i]);  // 正弦函数
-            y2[i] = cos(x[i]);  // 余弦函数
-            y3[i] = exp(-x[i] * x[i]);  // 高斯函数（指数衰减）
-        }
+int main(int argc, char *argv[]) {
 
-        // 创建三条曲线，并添加到 QCustomPlot 中
-        customPlot->addGraph();
-        customPlot->graph(0)->setData(x, y1);  // 正弦曲线
-        customPlot->graph(0)->setPen(QPen(Qt::blue));  // 设置颜色为蓝色
-        customPlot->graph(0)->setName("sin(x)");
+    QApplication a(argc, argv);
 
-        customPlot->addGraph();
-        customPlot->graph(1)->setData(x, y2);  // 余弦曲线
-        customPlot->graph(1)->setPen(QPen(Qt::red));  // 设置颜色为红色
-        customPlot->graph(1)->setName("cos(x)");
+    qDebug() << "MAIN is running " << QThread::currentThreadId();
 
-        customPlot->addGraph();
-        customPlot->graph(2)->setData(x, y3);  // 高斯曲线
-        customPlot->graph(2)->setPen(QPen(Qt::green));  // 设置颜色为绿色
-        customPlot->graph(2)->setName("exp(-x^2)");
+    // MainWindow maindown;
+    // maindown.show();
 
-        // 设置坐标轴标签
-        customPlot->xAxis->setLabel("X Axis");
-        customPlot->yAxis->setLabel("Y Axis");
+    // UrlRequestManager manager;
+    // // 创建一个请求
+    // UrlRequest request = {"http://example.com", true, false};
+    // // 增加请求并获取唯一ID
+    // QString requestId = manager.addRequest(request);
+    // qDebug() << "Request ID:" << requestId;
+    // // 使用ID查找请求
+    // UrlRequest* foundRequest = manager.findRequest(requestId);
+    // if (foundRequest) {
+    //     qDebug() << "Found request with URL:" << foundRequest->url;
+    // }
+    // // 更新请求的属性（仅更新 isRunning 和 isPeriodic）
+    // manager.updateRequest(requestId, std::nullopt, false, true);  // 只更新 isRunning 和 isPeriodic
+    // // 查找并输出更新后的请求
+    // foundRequest = manager.findRequest(requestId);
+    // if (foundRequest) {
+    //     qDebug() << "Updated request with URL:" << foundRequest->url
+    //              << ", isRunning:" << foundRequest->isRunning
+    //              << ", isPeriodic:" << foundRequest->isPeriodic;
+    // }
+    // // 删除请求
+    // manager.removeRequest(requestId);
 
-        // 设置坐标轴范围
-        customPlot->xAxis->setRange(-5, 5);  // x轴范围是 -5 到 5
-        customPlot->yAxis->setRange(-1.5, 1.5);  // y轴范围是 -1.5 到 1.5
+    UrlGenerator urlGen1({"scanSetup", "channels", "5"}, "set",
+                    {{"channelMode", "TotalPressure"}, {"dwell", "1"}, {"enabled", "True"}});
+    QUrl url1 = urlGen1.generateUrl();
+    qDebug() << "Generated URL 1: " << url1.toString(); 
 
-        // 启用网格
-        customPlot->xAxis->grid()->setSubGridVisible(true);
-        customPlot->yAxis->grid()->setSubGridVisible(true);
-
-        // 设置图例，显示图例并自动调整位置
-        customPlot->legend->setVisible(true);
-        customPlot->legend->setFont(QFont("Arial", 10));
-        customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 200))); // 设置透明背景
-        customPlot->legend->setBorderPen(QPen(Qt::black)); // 设置边框颜色
-
-        // 启用缩放和拖拽
-        customPlot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom);
-
-        // 允许使用鼠标滚轮进行缩放
-        customPlot->setMouseTracking(true);
-
-        // 重新绘制图表
-        customPlot->replot();
-    }
-};
-
-
-int main(int argc, char *argv[]) 
-{
-    // 初始化 Qt 应用程序
-    QApplication app(argc, argv);
+    // 创建 UrlEntry 对象
+    UrlEntry entry = urlGen1.createUrlEntry("配置扫描通道 5", "scanSetup");
     
-    qDebug() << "MAIN  is running in thread:" << QThread::currentThreadId();
+    // 将生成的 URL 写入 JSON 文件
+    urlGen1.writeUrlToJson("urls.json", entry);
 
 
-    RGAData rga;
-    rga.start();
 
-
-   
-    int result = app.exec();
-    // 进入事件循环
-    return result;
+    return a.exec();  // 启动事件循环
 }

@@ -7,14 +7,19 @@
 #include "include/URLManger.h"
 #include "include/UrlGenerator.h"
 
+
+
+// 主线程中接收信号
+
+
 int main(int argc, char *argv[]) {
 
     QApplication a(argc, argv);
 
     qDebug() << "MAIN is running " << QThread::currentThreadId();
 
-    // MainWindow maindown;
-    // maindown.show();
+    MainWindow maindown;
+    maindown.show();
 
     // UrlRequestManager manager;
     // // 创建一个请求
@@ -38,19 +43,7 @@ int main(int argc, char *argv[]) {
     // }
     // // 删除请求
     // manager.removeRequest(requestId);
-
-    UrlGenerator urlGen1({"scanSetup", "channels", "5"}, "set",
-                    {{"channelMode", "TotalPressure"}, {"dwell", "1"}, {"enabled", "True"}});
-    QUrl url1 = urlGen1.generateUrl();
-    qDebug() << "Generated URL 1: " << url1.toString(); 
-
-    // 创建 UrlEntry 对象
-    UrlEntry entry = urlGen1.createUrlEntry("配置扫描通道 5", "scanSetup");
     
-    // 将生成的 URL 写入 JSON 文件
-    urlGen1.writeUrlToJson("urls.json", entry);
-
-
 
     return a.exec();  // 启动事件循环
 }

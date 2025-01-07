@@ -46,7 +46,7 @@ bool CustomFile::createAndWriteToFile(int dwell, int ppamu, const QString &addr,
     QTextStream out(&m_file);
 
     // 获取当前时间并格式化为 StartTm
-    QString startTm = QDateTime::currentDateTime().toString("yyyy-dd-MM hh:mm:ss");
+    QString startTm = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
 
     // 按照csv格式写入数据，使用逗号作为分隔符
     out << "Dwell," << dwell << "\n";

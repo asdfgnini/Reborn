@@ -43,6 +43,7 @@ struct UrlRequest {
 struct RequestFilter {
     std::optional<bool> isRunning;    // 是否正在运行
     std::optional<RequestStep> step;  // 请求阶段
+    std::optional<QString> urlPart;   // URL 的一部分（用于包含判断）
 
     // 判断请求是否符合当前的筛选条件
     bool matches(const UrlRequest& request) const {
@@ -53,9 +54,14 @@ struct RequestFilter {
         if (step.has_value() && request.step != step.value()) {
             return false;
         }
+        if (urlPart.has_value() && !request.url.contains(urlPart.value())) {
+            return false;
+        }
         return true;
     }
 };
+
+
 
 class UrlRequestManager {
 public:
@@ -181,3 +187,47 @@ private:
     mutable QHash<QString, UrlRequest> requests;  // 使用请求ID作为键的哈希表
     mutable QReadWriteLock lock;                   // 保护请求哈希表的读写锁
 };
+/*
+使用例子如下
+*/
+// // 创建 UrlRequestManager 实例
+//     UrlRequestManager manager;
+
+//     // 创建一些 UrlRequest 对象
+//     UrlRequest request1 = { "http://example.com/api/1", true, RequestStep::Step1 };
+//     UrlRequest request2 = { "http://example.com/api/2", false, RequestStep::Step2 };
+//     UrlRequest request3 = { "http://example.com/api/3", true, RequestStep::Step3 };
+//     UrlRequest request4 = { "http://example.com/api/4", true, RequestStep::Step2 };
+
+//     // 批量添加请求
+//     QList<UrlRequest> requests = { request1, request2, request3, request4 };
+//     QList<QString> requestIds = manager.addRequests(requests);
+
+//     qDebug() << "Added Requests:";
+//     for (const QString& requestId : requestIds) {
+//         qDebug() << "Request ID:" << requestId;
+//     }
+
+//     // 创建多个条件的筛选器：查找正在运行且阶段为 Step2 的请求
+//     RequestFilter filter;
+//     filter.isRunning = true;  // 只查找正在运行的请求
+//     filter.step = RequestStep::Step2;  // 查找请求阶段为 Step2 的请求
+
+//     QList<UrlRequest> filteredRequests = manager.getRequestsByFilter(filter);
+
+//     qDebug() << "Filtered Requests (Running & Step2):";
+//     for (const UrlRequest& req : filteredRequests) {
+//         qDebug() << req.url << "Step:" << manager.stepToString(req.step);
+//     }
+
+//     // 创建多个条件的筛选器：查找 URL 包含 "api/3" 且处于 Step3 阶段的请求
+//     RequestFilter filterByUrlAndStep;
+//     filterByUrlAndStep.url = "http://example.com/api/3";  // 查找 URL 匹配 "api/3" 的请求
+//     filterByUrlAndStep.step = RequestStep::Step3;  // 查找请求阶段为 Step3 的请求
+
+//     QList<UrlRequest> filteredByUrlAndStep = manager.getRequestsByFilter(filterByUrlAndStep);
+
+//     qDebug() << "Filtered Requests (URL & Step3):";
+//     for (const UrlRequest& req : filteredByUrlAndStep) {
+//         qDebug() << req.url << "Step:" << manager.stepToString(req.step);
+//     }

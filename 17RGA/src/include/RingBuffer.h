@@ -5,11 +5,11 @@
 #include <QWaitCondition>
 
 struct Post {
-    int userId;
-    int id;
-    QString title;
-    QString body;
+    QString data;
+    QString name;
+    QString origin;
 };
+
 
 class RingBuffer {
 public:

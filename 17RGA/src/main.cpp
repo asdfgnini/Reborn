@@ -4,8 +4,7 @@
 
 #include <QThread>
 #include "include/Mainwindow.h"
-#include "include/URLManger.h"
-#include "include/UrlGenerator.h"
+
 
 
 

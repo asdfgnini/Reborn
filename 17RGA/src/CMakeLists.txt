@@ -7,9 +7,12 @@ FILE(GLOB_RECURSE ORIGIN *.h *.cpp)
 # message("ORIGIN: ${ORIGIN}")
 # message("INCLUDE: ${INCLUDE}")
 
-# 添加可执行文件
-add_executable(${PROJECT_NAME} ${ORIGIN})
+SET(RCC_FILES ./ui/res/res.qrc)
 
+# 添加可执行文件
+add_executable(${PROJECT_NAME} ${ORIGIN} ${RCC_FILES})
+
+add_definitions(-DTAOTOOLS_LIBRARY)
 
 # 链接第三方库
 target_link_libraries(${PROJECT_NAME} PRIVATE  
@@ -19,3 +22,10 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt6::Network
     Qt6::Concurrent
 )
+# target_link_libraries(${PROJECT_NAME} PRIVATE  
+#     Qt5::Core
+#     Qt5::Widgets
+#     Qt5::PrintSupport
+#     Qt5::Network
+#     Qt5::Concurrent
+# )

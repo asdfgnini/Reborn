@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/ui/res">
+        <file>Font/TaoAwesome.ttf</file>
+        <file>Image/Cirno.jpg</file>
+        <file>Image/ReBorn.png</file>
+    </qresource>
+</RCC>

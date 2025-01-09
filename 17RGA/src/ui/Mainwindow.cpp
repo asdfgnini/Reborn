@@ -31,6 +31,9 @@ void MainWindow::ui_init()
 {
     initWindow();
     initEdgeLayout();
+
+
+    moveToCenter();
 }
 void MainWindow::initWindow()
 {
@@ -74,6 +77,20 @@ void MainWindow::initEdgeLayout()
     shortCutMenu->addTaoIconAction(TaoIconType::ArrowRotateRight, "刷新");
     shortCutMenu->addTaoIconAction(TaoIconType::ArrowRotateLeft, "撤销");
     menuBar->addMenu(shortCutMenu);
+
+    // //停靠窗口
+    // TaoDockWidget* logDockWidget = new TaoDockWidget("日志信息", this);
+    // logDockWidget->setWidget(new T_LogWidget(this));
+    // this->addDockWidget(Qt::RightDockWidgetArea, logDockWidget);
+    // resizeDocks({logDockWidget}, {200}, Qt::Horizontal);
+
+    TaoDockWidget* updateDockWidget = new TaoDockWidget("更新内容", this);
+    updateDockWidget->setWidget(new T_UpdateWidget(this));
+    this->addDockWidget(Qt::RightDockWidgetArea, updateDockWidget);
+    resizeDocks({updateDockWidget}, {200}, Qt::Horizontal);
+
+
+    this->addCustomWidget(new T_BaseComponents(this));
 
 }
 

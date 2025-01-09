@@ -12,3 +12,6 @@
 #include "TaoDockWidget.h"
 #include "TaoWindow.h"
 #include "TaoMenuBar.h"
+#include "T_UpdateWidget.h"
+#include "TaoScrollPage.h"
+#include "T_BaseComponents.h"

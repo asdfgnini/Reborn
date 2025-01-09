@@ -17,15 +17,13 @@
 #include "./inc/TaoEventBus.h"
 #include "./inc/TaoMenu.h"
 
-#include "./inc/TaoNavigationRouter.h"
+
 #include "./inc/TaoTheme.h"
 #include "./inc/TaoWindowStyle.h"
 #include "private/TaoAppBarPrivate.h"
-#include "private/TaoNavigationBarPrivate.h"
 #include "private/TaoWindowPrivate.h"
 
 Q_PROPERTY_CREATE_Q_CPP(TaoWindow, int, ThemeChangeTime)
-Q_PROPERTY_CREATE_Q_CPP(TaoWindow, TaoNavigationType::NavigationDisplayMode, NavigationBarDisplayMode)
 Q_TAKEOVER_NATIVEEVENT_CPP(TaoWindow, d_func()->_appBar);
 TaoWindow::TaoWindow(QWidget* parent)
     : QMainWindow{parent}, d_ptr(new TaoWindowPrivate())
@@ -36,21 +34,12 @@ TaoWindow::TaoWindow(QWidget* parent)
     setProperty("TaoBaseClassName", "TaoWindow");
     resize(1020, 680); // 默认宽高
 
-    d->_pThemeChangeTime = 700;
-    d->_pNavigationBarDisplayMode = TaoNavigationType::NavigationDisplayMode::Auto;
-    connect(this, &TaoWindow::pNavigationBarDisplayModeChanged, d, &TaoWindowPrivate::onDisplayModeChanged);
 
     // 自定义AppBar
     d->_appBar = new TaoAppBar(this);
-    connect(d->_appBar, &TaoAppBar::routeBackButtonClicked, this, []() {
-        TaoNavigationRouter::getInstance()->navigationRouteBack();
-    });
     connect(d->_appBar, &TaoAppBar::closeButtonClicked, this, &TaoWindow::closeButtonClicked);
-    // 导航栏
-    // 返回按钮状态变更
-    connect(TaoNavigationRouter::getInstance(), &TaoNavigationRouter::navigationRouterStateChanged, this, [d](bool isEnable) {
-        d->_appBar->setRouteBackButtonEnable(isEnable);
-    });
+
+
 
     // 中心堆栈窗口
     d->_centerStackedWidget = new TaoCentralStackedWidget(this);
@@ -62,11 +51,8 @@ TaoWindow::TaoWindow(QWidget* parent)
     d->_centerLayout->setContentsMargins(d->_contentsMargins, 0, 0, 0);
 
     // 事件总线
-    d->_focusEvent = new TaoEvent("WMWindowClicked", "onWMWindowClickedEvent", d);
     d->_focusEvent->registerAndInit();
 
-    // 展开导航栏
-    connect(d->_appBar, &TaoAppBar::navigationButtonClicked, d, &TaoWindowPrivate::onNavigationButtonClicked);
 
     // 主题变更动画
     d->_themeMode = tTheme->getThemeMode();
@@ -94,7 +80,26 @@ TaoWindow::TaoWindow(QWidget* parent)
 
 TaoWindow::~TaoWindow()
 {
+    
 }
+
+void TaoWindow::addCustomWidget(QWidget* widget)
+{
+    Q_D(TaoWindow);
+    if (widget) {
+        d->_centerStackedWidget->addWidget(widget);  // 添加自定义界面到堆栈窗口中
+    }
+}
+
+void TaoWindow::removeCustomWidget(QWidget* widget)
+{
+    Q_D(TaoWindow);
+    if (widget) {
+        d->_centerStackedWidget->removeWidget(widget);  // 从堆栈窗口中移除指定界面
+        delete widget;  // 如果不再需要该界面，删除它
+    }
+}
+
 
 void TaoWindow::setIsStayTop(bool isStayTop)
 {
@@ -197,12 +202,6 @@ void TaoWindow::setCustomWidget(TaoAppBarType::CustomArea customArea, QWidget* w
     Q_EMIT customWidgetChanged();
 }
 
-
-bool TaoWindow::getIsNavigationBarEnable() const
-{
-    return d_ptr->_isNavigationEnable;
-}
-
 void TaoWindow::setWindowButtonFlag(TaoAppBarType::ButtonType buttonFlag, bool isEnable)
 {
     Q_D(TaoWindow);
@@ -229,19 +228,6 @@ void TaoWindow::closeWindow()
 
 bool TaoWindow::eventFilter(QObject* watched, QEvent* event)
 {
-    Q_D(TaoWindow);
-    switch (event->type())
-    {
-    case QEvent::Resize:
-    {
-        d->_doNavigationDisplayModeChange();
-        break;
-    }
-    default:
-    {
-        break;
-    }
-    }
     return QMainWindow::eventFilter(watched, event);
 }
 

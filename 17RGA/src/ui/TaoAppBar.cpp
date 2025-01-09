@@ -73,13 +73,14 @@ TaoAppBar::TaoAppBar(QWidget* parent)
     d->_navigationButton->setObjectName("NavigationButton");
     d->_navigationButton->setVisible(false);
     // 展开导航栏
-    connect(d->_navigationButton, &TaoIconButton::clicked, this, &TaoAppBar::navigationButtonClicked);
+    connect(d->_navigationButton, &TaoToolButton::clicked, this, &TaoAppBar::navigationButtonClicked);
 
     // 设置置顶
     d->_stayTopButton = new TaoToolButton(this);
     d->_stayTopButton->setTaoIcon(TaoIconType::ArrowUpToArc);
     d->_stayTopButton->setFixedSize(40, 30);
-    connect(d->_stayTopButton, &TaoIconButton::clicked, this, [=]() { this->setIsStayTop(!this->getIsStayTop()); });
+
+    connect(d->_stayTopButton, &TaoToolButton::clicked, this, [=]() { this->setIsStayTop(!this->getIsStayTop()); });
     connect(this, &TaoAppBar::pIsStayTopChanged, d, &TaoAppBarPrivate::onStayTopButtonClicked);
 
     //图标
@@ -124,7 +125,8 @@ TaoAppBar::TaoAppBar(QWidget* parent)
     d->_themeChangeButton = new TaoToolButton(this);
     d->_themeChangeButton->setTaoIcon(TaoIconType::MoonStars);
     d->_themeChangeButton->setFixedSize(40, 30);
-    connect(d->_themeChangeButton, &TaoIconButton::clicked, this, &TaoAppBar::themeChangeButtonClicked);
+    d->_themeChangeButton->setVisible(false);
+    connect(d->_themeChangeButton, &TaoToolButton::clicked, this, &TaoAppBar::themeChangeButtonClicked);
     connect(tTheme, &TaoTheme::themeModeChanged, this, [=](TaoThemeType::ThemeMode themeMode) { d->_onThemeModeChange(themeMode); });
 
     d->_minButton = new TaoToolButton(this);

@@ -65,7 +65,7 @@ QAction* TaoToolBar::addTaoIconAction(TaoIconType::IconName icon, const QString&
 {
     QAction* action = new QAction(text, this);
     action->setProperty("TaoIconType", QChar((unsigned short)icon));
-    action->setIcon(TaoIcon::getInstance()->getTaoIcon(TaoIconType::Broom, 1));
+    action->setIcon(TaoIcon::getInstance()->getTaoIcon(TaoIconType::TAOfile, 1));
     addAction(action);
     return action;
 }
@@ -75,7 +75,7 @@ QAction* TaoToolBar::addTaoIconAction(TaoIconType::IconName icon, const QString&
     QAction* action = new QAction(text, this);
     action->setShortcut(shortcut);
     action->setProperty("TaoIconType", QChar((unsigned short)icon));
-    action->setIcon(TaoIcon::getInstance()->getTaoIcon(TaoIconType::Broom, 1));
+    action->setIcon(TaoIcon::getInstance()->getTaoIcon(TaoIconType::TAOfile, 1));
     addAction(action);
     return action;
 }

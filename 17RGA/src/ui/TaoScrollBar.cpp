@@ -192,22 +192,22 @@ void TaoScrollBar::contextMenuEvent(QContextMenuEvent* event)
     QPointer<TaoMenu> menu = new TaoMenu(this);
     menu->setMenuItemHeight(27);
     // Scroll here
-    QAction* actScrollHere = menu->addTaoIconAction(TaoIconType::UpDownLeftRight, tr("滚动到此处"));
+    QAction* actScrollHere = menu->addTaoIconAction(TaoIconType::TAOfile, tr("滚动到此处"));
     menu->addSeparator();
     // Left edge Top
-    QAction* actScrollTop = menu->addTaoIconAction(horiz ? TaoIconType::ArrowLeftToLine : TaoIconType::ArrowUpToLine, horiz ? tr("左边缘") : tr("顶端"));
+    QAction* actScrollTop = menu->addTaoIconAction(horiz ? TaoIconType::TAOfile : TaoIconType::TAOfile, horiz ? tr("左边缘") : tr("顶端"));
     // Right edge Bottom
-    QAction* actScrollBottom = menu->addTaoIconAction(horiz ? TaoIconType::ArrowRightToLine : TaoIconType::ArrowDownToLine, horiz ? tr("右边缘") : tr("底部"));
+    QAction* actScrollBottom = menu->addTaoIconAction(horiz ? TaoIconType::TAOfile : TaoIconType::TAOfile, horiz ? tr("右边缘") : tr("底部"));
     menu->addSeparator();
     // Page left Page up
-    QAction* actPageUp = menu->addTaoIconAction(horiz ? TaoIconType::AnglesLeft : TaoIconType::AnglesUp, horiz ? tr("向左翻页") : tr("向上翻页"));
+    QAction* actPageUp = menu->addTaoIconAction(horiz ? TaoIconType::TAOfile : TaoIconType::TAOfile, horiz ? tr("向左翻页") : tr("向上翻页"));
     //Page right Page down
-    QAction* actPageDn = menu->addTaoIconAction(horiz ? TaoIconType::AnglesRight : TaoIconType::AnglesDown, horiz ? tr("向右翻页") : tr("向下翻页"));
+    QAction* actPageDn = menu->addTaoIconAction(horiz ? TaoIconType::TAOfile : TaoIconType::TAOfile, horiz ? tr("向右翻页") : tr("向下翻页"));
     menu->addSeparator();
     //Scroll left Scroll up
-    QAction* actScrollUp = menu->addTaoIconAction(horiz ? TaoIconType::AngleLeft : TaoIconType::AngleUp, horiz ? tr("向左滚动") : tr("向上滚动"));
+    QAction* actScrollUp = menu->addTaoIconAction(horiz ? TaoIconType::TAOfile : TaoIconType::TAOfile, horiz ? tr("向左滚动") : tr("向上滚动"));
     //Scroll right Scroll down
-    QAction* actScrollDn = menu->addTaoIconAction(horiz ? TaoIconType::AngleRight : TaoIconType::AngleDown, horiz ? tr("向右滚动") : tr("向下滚动"));
+    QAction* actScrollDn = menu->addTaoIconAction(horiz ? TaoIconType::TAOfile : TaoIconType::TAOfile, horiz ? tr("向右滚动") : tr("向下滚动"));
     QAction* actionSelected = menu->exec(event->globalPos());
     delete menu;
     if (!actionSelected)

@@ -32,7 +32,7 @@ private:
     void ui_init();
     void initWindow();
 
-    void initEdgeLayout();
+    void initEdgTaoyout();
 
 };
 

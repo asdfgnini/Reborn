@@ -62,7 +62,13 @@ QString TaoApplication::getMicaImagePath() const
 void TaoApplication::init()
 {
     QApplication::setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
-    QFontDatabase::addApplicationFont(":/ui/res/Font/TaoAwesome.ttf");
+    int fontId = QFontDatabase::addApplicationFont(":/ui/res/Font/FontAwesome6.otf");
+    if (fontId == -1)
+    {
+        qWarning() << "字体加载失败!";
+        return;
+    }
+
     //默认字体
     QFont font = qApp->font();
     font.setPixelSize(13);

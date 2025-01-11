@@ -98,7 +98,7 @@ void TaoMenuStyle::drawControl(ControlElement element, const QStyleOption* optio
                     QFont iconFont = QFont("TaoAwesome");
                     iconFont.setPixelSize(_pMenuItemHeight * 0.57);
                     painter->setFont(iconFont);
-                    painter->drawText(QRectF(menuRect.x() + contentPadding, menuRect.y(), _iconWidth, menuRect.height()), Qt::AlignCenter, mopt->checked ? QChar((unsigned short)TaoIconType::Check) : QChar((unsigned short)TaoIconType::None));
+                    painter->drawText(QRectF(menuRect.x() + contentPadding, menuRect.y(), _iconWidth, menuRect.height()), Qt::AlignCenter, mopt->checked ? QChar((unsigned short)TaoIconType::TAOfile) : QChar((unsigned short)TaoIconType::None));
                     painter->restore();
                 }
                 else
@@ -154,7 +154,7 @@ void TaoMenuStyle::drawControl(ControlElement element, const QStyleOption* optio
                     QFont iconFont = QFont("TaoAwesome");
                     iconFont.setPixelSize(18);
                     painter->setFont(iconFont);
-                    painter->drawText(QRect(menuRect.right() - 25, menuRect.y(), 25, menuRect.height()), Qt::AlignVCenter, QChar((unsigned short)TaoIconType::AngleRight));
+                    painter->drawText(QRect(menuRect.right() - 25, menuRect.y(), 25, menuRect.height()), Qt::AlignVCenter, QChar((unsigned short)TaoIconType::TAOfile));
                     painter->restore();
                 }
                 painter->restore();

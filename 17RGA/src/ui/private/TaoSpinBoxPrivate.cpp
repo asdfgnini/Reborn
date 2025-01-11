@@ -26,11 +26,11 @@ TaoMenu* TaoSpinBoxPrivate::_createStandardContextMenu()
     QAction* action = nullptr;
     if (!lineEdit->isReadOnly())
     {
-        action = menu->addTaoIconAction(TaoIconType::ArrowRotateLeft, tr("撤销"), QKeySequence::Undo);
+        action = menu->addTaoIconAction(TaoIconType::TAOfile, tr("撤销"), QKeySequence::Undo);
         action->setEnabled(lineEdit->isUndoAvailable());
         connect(action, &QAction::triggered, lineEdit, &QLineEdit::undo);
 
-        action = menu->addTaoIconAction(TaoIconType::ArrowRotateRight, tr("恢复"), QKeySequence::Redo);
+        action = menu->addTaoIconAction(TaoIconType::TAOfile, tr("恢复"), QKeySequence::Redo);
         action->setEnabled(lineEdit->isRedoAvailable());
         connect(action, &QAction::triggered, lineEdit, &QLineEdit::redo);
         menu->addSeparator();
@@ -38,25 +38,25 @@ TaoMenu* TaoSpinBoxPrivate::_createStandardContextMenu()
 #ifndef QT_NO_CLIPBOARD
     if (!lineEdit->isReadOnly())
     {
-        action = menu->addTaoIconAction(TaoIconType::KnifeKitchen, tr("剪切"), QKeySequence::Cut);
+        action = menu->addTaoIconAction(TaoIconType::TAOfile, tr("剪切"), QKeySequence::Cut);
         action->setEnabled(!lineEdit->isReadOnly() && lineEdit->hasSelectedText() && lineEdit->echoMode() == QLineEdit::Normal);
         connect(action, &QAction::triggered, lineEdit, &QLineEdit::cut);
     }
 
-    action = menu->addTaoIconAction(TaoIconType::Copy, tr("复制"), QKeySequence::Copy);
+    action = menu->addTaoIconAction(TaoIconType::TAOfile, tr("复制"), QKeySequence::Copy);
     action->setEnabled(lineEdit->hasSelectedText() && lineEdit->echoMode() == QLineEdit::Normal);
     connect(action, &QAction::triggered, lineEdit, &QLineEdit::copy);
 
     if (!lineEdit->isReadOnly())
     {
-        action = menu->addTaoIconAction(TaoIconType::Paste, tr("粘贴"), QKeySequence::Paste);
+        action = menu->addTaoIconAction(TaoIconType::TAOfile, tr("粘贴"), QKeySequence::Paste);
         action->setEnabled(!lineEdit->isReadOnly() && !QGuiApplication::clipboard()->text().isEmpty());
         connect(action, &QAction::triggered, lineEdit, &QLineEdit::paste);
     }
 #endif
     if (!lineEdit->isReadOnly())
     {
-        action = menu->addTaoIconAction(TaoIconType::DeleteLeft, tr("删除"));
+        action = menu->addTaoIconAction(TaoIconType::TAOfile, tr("删除"));
         action->setEnabled(!lineEdit->isReadOnly() && !lineEdit->text().isEmpty() && lineEdit->hasSelectedText());
         connect(action, &QAction::triggered, this, [=](bool checked) {
             if (lineEdit->hasSelectedText())

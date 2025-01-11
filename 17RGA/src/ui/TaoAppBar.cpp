@@ -33,7 +33,7 @@ TaoAppBar::TaoAppBar(QWidget* parent)
     : QWidget{parent}, d_ptr(new TaoAppBarPrivate())
 {
     Q_D(TaoAppBar);
-    d->_buttonFlags = TaoAppBarType::RouteBackButtonHint | TaoAppBarType::StayTopButtonHint | TaoAppBarType::ThemeChangeButtonHint | TaoAppBarType::MinimizeButtonHint | TaoAppBarType::MaximizeButtonHint | TaoAppBarType::CloseButtonHint;
+    d->_buttonFlags = TaoAppBarType::ThemeChangeButtonHint | TaoAppBarType::MinimizeButtonHint | TaoAppBarType::MaximizeButtonHint | TaoAppBarType::CloseButtonHint;
     window()->setAttribute(Qt::WA_Mapped);
     d->_pAppBarHeight = 45;
     setFixedHeight(d->_pAppBarHeight);
@@ -58,26 +58,10 @@ TaoAppBar::TaoAppBar(QWidget* parent)
     setObjectName("TaoAppBar");
     setStyleSheet("#TaoAppBar{background-color:transparent;}");
 
-    d->_routeBackButton = new TaoToolButton(this);
-    d->_routeBackButton->setTaoIcon(TaoIconType::Bars);
-    d->_routeBackButton->setFixedSize(40, 30);
-    d->_routeBackButton->setEnabled(false);
-    d->_routeBackButton->setVisible(false);
-    // 路由跳转
-    connect(d->_routeBackButton, &TaoIconButton::clicked, this, &TaoAppBar::routeBackButtonClicked);
-
-    // 导航栏展开按钮
-    d->_navigationButton = new TaoToolButton(this);
-    d->_navigationButton->setTaoIcon(TaoIconType::Bat);
-    d->_navigationButton->setFixedSize(40, 30);
-    d->_navigationButton->setObjectName("NavigationButton");
-    d->_navigationButton->setVisible(false);
-    // 展开导航栏
-    connect(d->_navigationButton, &TaoToolButton::clicked, this, &TaoAppBar::navigationButtonClicked);
 
     // 设置置顶
     d->_stayTopButton = new TaoToolButton(this);
-    d->_stayTopButton->setTaoIcon(TaoIconType::ArrowUpToArc);
+    d->_stayTopButton->setTaoIcon(TaoIconType::TAOarrow_up);
     d->_stayTopButton->setFixedSize(40, 30);
 
     connect(d->_stayTopButton, &TaoToolButton::clicked, this, [=]() { this->setIsStayTop(!this->getIsStayTop()); });
@@ -123,22 +107,22 @@ TaoAppBar::TaoAppBar(QWidget* parent)
 
     // 主题变更
     d->_themeChangeButton = new TaoToolButton(this);
-    d->_themeChangeButton->setTaoIcon(TaoIconType::MoonStars);
+    d->_themeChangeButton->setTaoIcon(TaoIconType::TAOfile);
     d->_themeChangeButton->setFixedSize(40, 30);
     d->_themeChangeButton->setVisible(false);
     connect(d->_themeChangeButton, &TaoToolButton::clicked, this, &TaoAppBar::themeChangeButtonClicked);
     connect(tTheme, &TaoTheme::themeModeChanged, this, [=](TaoThemeType::ThemeMode themeMode) { d->_onThemeModeChange(themeMode); });
 
     d->_minButton = new TaoToolButton(this);
-    d->_minButton->setTaoIcon(TaoIconType::Dash);
+    d->_minButton->setTaoIcon(TaoIconType::TAOwindow_minimize);
     d->_minButton->setFixedSize(40, 30);
     connect(d->_minButton, &TaoIconButton::clicked, d, &TaoAppBarPrivate::onMinButtonClicked);
     d->_maxButton = new TaoToolButton(this);
     d->_maxButton->setIconSize(QSize(18, 18));
-    d->_maxButton->setTaoIcon(TaoIconType::Square);
+    d->_maxButton->setTaoIcon(TaoIconType::TAOexpand);
     d->_maxButton->setFixedSize(40, 30);
     connect(d->_maxButton, &TaoIconButton::clicked, d, &TaoAppBarPrivate::onMaxButtonClicked);
-    d->_closeButton = new TaoIconButton(TaoIconType::Xmark, 18, 40, 30, this);
+    d->_closeButton = new TaoIconButton(TaoIconType::TAOXmark, 18, 40, 30, this);
     d->_closeButton->setLightHoverColor(QColor(0xE8, 0x11, 0x23));
     d->_closeButton->setDarkHoverColor(QColor(0xE8, 0x11, 0x23));
     d->_closeButton->setLightHoverIconColor(Qt::white);
@@ -148,8 +132,6 @@ TaoAppBar::TaoAppBar(QWidget* parent)
     d->_mainLayout = new QHBoxLayout(this);
     d->_mainLayout->setContentsMargins(0, 0, 0, 0);
     d->_mainLayout->setSpacing(0);
-    d->_mainLayout->addLayout(d->_createVLayout(d->_routeBackButton));
-    d->_mainLayout->addLayout(d->_createVLayout(d->_navigationButton));
     d->_mainLayout->addLayout(d->_iconLabelLayout);
     d->_mainLayout->addLayout(d->_titleLabelLayout);
     d->_mainLayout->addStretch();
@@ -219,17 +201,17 @@ void TaoAppBar::setCustomWidget(TaoAppBarType::CustomArea customArea, QWidget* w
     {
     case TaoAppBarType::LeftArea:
     {
-        d->_mainLayout->insertWidget(4, widget);
+        d->_mainLayout->insertWidget(3, widget);
         break;
     }
     case TaoAppBarType::MiddleArea:
     {
-        d->_mainLayout->insertWidget(5, widget);
+        d->_mainLayout->insertWidget(4, widget);
         break;
     }
     case TaoAppBarType::RightArea:
     {
-        d->_mainLayout->insertWidget(6, widget);
+        d->_mainLayout->insertWidget(5, widget);
         break;
     }
     }
@@ -315,8 +297,6 @@ void TaoAppBar::setWindowButtonFlags(TaoAppBarType::ButtonFlags buttonFlags)
 {
     Q_D(TaoAppBar);
     d->_buttonFlags = buttonFlags;
-    d->_routeBackButton->setVisible(d->_buttonFlags.testFlag(TaoAppBarType::RouteBackButtonHint));
-    d->_navigationButton->setVisible(d->_buttonFlags.testFlag(TaoAppBarType::NavigationButtonHint));
     d->_stayTopButton->setVisible(d->_buttonFlags.testFlag(TaoAppBarType::StayTopButtonHint));
     d->_themeChangeButton->setVisible(d->_buttonFlags.testFlag(TaoAppBarType::ThemeChangeButtonHint));
     d->_minButton->setVisible(d->_buttonFlags.testFlag(TaoAppBarType::MinimizeButtonHint));
@@ -332,7 +312,7 @@ TaoAppBarType::ButtonFlags TaoAppBar::getWindowButtonFlags() const
 void TaoAppBar::setRouteBackButtonEnable(bool isEnable)
 {
     Q_D(TaoAppBar);
-    d->_routeBackButton->setEnabled(isEnable);
+    // d->_routeBackButton->setEnabled(isEnable);
 }
 
 void TaoAppBar::closeWindow()

@@ -5,10 +5,6 @@ project(17RGA)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-## QT
-# 对于Qt所提供的cmake脚本，所定义的目标是局部的，只能往find_package本目录和子目录传递目标，不能向父目录传递目标
-set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};D:\\Qt\\6.7.3\\llvm-mingw_64\\lib\\cmake")
-# set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};C:\\Qt\\5.15.2\\mingw81_64\\lib\\cmake")
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -16,6 +12,9 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+
+# set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};D:\\Qt\\6.7.3\\llvm-mingw_64\\lib\\cmake")
 
 # 查找 Qt6 模块，确保 Core 和 Widgets 被找到
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets PrintSupport Network Concurrent)

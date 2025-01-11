@@ -37,8 +37,6 @@ private:
     QVBoxLayout* _iconLabelLayout{nullptr};
     QVBoxLayout* _titleLabelLayout{nullptr};
     TaoAppBarType::ButtonFlags _buttonFlags;
-    TaoToolButton* _routeBackButton{nullptr};
-    TaoToolButton* _navigationButton{nullptr};
     TaoToolButton* _themeChangeButton{nullptr};
     TaoToolButton* _stayTopButton{nullptr};
     TaoToolButton* _minButton{nullptr};

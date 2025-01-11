@@ -78,7 +78,7 @@ void TaoToolButton::setMenu(TaoMenu* menu)
 void TaoToolButton::setTaoIcon(TaoIconType::IconName icon)
 {
     setProperty("TaoIconType", QChar((unsigned short)icon));
-    setIcon(TaoIcon::getInstance()->getTaoIcon(TaoIconType::Broom, 1));
+    setIcon(TaoIcon::getInstance()->getTaoIcon(TaoIconType::TAOfile, 1));
 }
 
 bool TaoToolButton::eventFilter(QObject* watched, QEvent* event)

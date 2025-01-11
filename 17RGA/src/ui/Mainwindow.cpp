@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     : TaoWindow(parent),
       m_ringBuffer(new RingBuffer(10)),  // 创建大小为 10 的环形缓冲区
       m_dataFetcher(new DataFetcher(m_ringBuffer, &url1, "https://jsonplaceholder.typicode.com/posts?_limit=3")),
-      url1("192.168.1.101", 80)  // 初始化 UrlGenerator 对象
+    url1("192.168.1.101", 80)  // 初始化 UrlGenerator 对象
 {
     ui_init();
 
@@ -30,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
 void MainWindow::ui_init()
 {
     initWindow();
-    initEdgeLayout();
+    initEdgTaoyout();
 
 
     moveToCenter();
@@ -42,7 +42,7 @@ void MainWindow::initWindow()
     resize(1200, 740);
 }
 
-void MainWindow::initEdgeLayout()
+void MainWindow::initEdgTaoyout()
 {
     //菜单栏
     TaoMenuBar* menuBar = new TaoMenuBar(this);
@@ -53,30 +53,36 @@ void MainWindow::initEdgeLayout()
     customLayout->addWidget(menuBar);
     customLayout->addStretch();
 
-    this->setCustomWidget(TaoAppBarType::MiddleArea, customWidget);
+    this->setCustomWidget(TaoAppBarType::LeftArea, customWidget);
     this->setCustomWidgetMaximumWidth(500);
 
-    menuBar->addTaoIconAction(TaoIconType::AtomSimple, "动作菜单");
+    menuBar->addTaoIconAction(TaoIconType::TAObars, "动作菜单");
     
-    TaoMenu* iconMenu = menuBar->addMenu(TaoIconType::AtomSimple, "图标菜单");
+    TaoMenu* iconMenu = menuBar->addMenu(TaoIconType::TAObars, "图标菜单");
     iconMenu->setMenuItemHeight(27);
-    iconMenu->addTaoIconAction(TaoIconType::BoxCheck, "排序方式", QKeySequence::SelectAll);
-    iconMenu->addTaoIconAction(TaoIconType::Copy, "复制");
-    iconMenu->addTaoIconAction(TaoIconType::MagnifyingGlassPlus, "显示设置");
+    iconMenu->addTaoIconAction(TaoIconType::TAOlist_check, "排序方式", QKeySequence::SelectAll);
+    iconMenu->addTaoIconAction(TaoIconType::TAOcopy, "复制");
+    iconMenu->addTaoIconAction(TaoIconType::TAOvideo, "显示设置");
     iconMenu->addSeparator();
-    iconMenu->addTaoIconAction(TaoIconType::ArrowRotateRight, "刷新");
-    iconMenu->addTaoIconAction(TaoIconType::ArrowRotateLeft, "撤销");
+    iconMenu->addTaoIconAction(TaoIconType::TAOrotate_right, "刷新");
+    iconMenu->addTaoIconAction(TaoIconType::TAOrotate_left, "撤销");
     menuBar->addSeparator();
 
     TaoMenu* shortCutMenu = new TaoMenu("快捷菜单(&A)", this);
     shortCutMenu->setMenuItemHeight(27);
-    shortCutMenu->addTaoIconAction(TaoIconType::BoxCheck, "排序方式", QKeySequence::Find);
-    shortCutMenu->addTaoIconAction(TaoIconType::Copy, "复制");
-    shortCutMenu->addTaoIconAction(TaoIconType::MagnifyingGlassPlus, "显示设置");
+    shortCutMenu->addTaoIconAction(TaoIconType::TAOlist_check, "排序方式", QKeySequence::Find);
+    shortCutMenu->addTaoIconAction(TaoIconType::TAOcopy, "复制");
+    shortCutMenu->addTaoIconAction(TaoIconType::TAOvideo, "显示设置");
     shortCutMenu->addSeparator();
-    shortCutMenu->addTaoIconAction(TaoIconType::ArrowRotateRight, "刷新");
-    shortCutMenu->addTaoIconAction(TaoIconType::ArrowRotateLeft, "撤销");
+    shortCutMenu->addTaoIconAction(TaoIconType::TAOrotate_right, "刷新");
+    shortCutMenu->addTaoIconAction(TaoIconType::TAOrotate_left, "撤销");
     menuBar->addMenu(shortCutMenu);
+
+    menuBar->addMenu("样例菜单(&B)")->addTaoIconAction(TaoIconType::TAOrotate_right, "样例选项");
+    menuBar->addMenu("样例菜单(&C)")->addTaoIconAction(TaoIconType::TAOrotate_right, "样例选项");
+    menuBar->addMenu("样例菜单(&E)")->addTaoIconAction(TaoIconType::TAOrotate_right, "样例选项");
+    menuBar->addMenu("样例菜单(&F)")->addTaoIconAction(TaoIconType::TAOrotate_right, "样例选项");
+    menuBar->addMenu("样例菜单(&G)")->addTaoIconAction(TaoIconType::TAOrotate_right, "样例选项");
 
     // //停靠窗口
     // TaoDockWidget* logDockWidget = new TaoDockWidget("日志信息", this);
@@ -84,13 +90,13 @@ void MainWindow::initEdgeLayout()
     // this->addDockWidget(Qt::RightDockWidgetArea, logDockWidget);
     // resizeDocks({logDockWidget}, {200}, Qt::Horizontal);
 
-    TaoDockWidget* updateDockWidget = new TaoDockWidget("更新内容", this);
-    updateDockWidget->setWidget(new T_UpdateWidget(this));
-    this->addDockWidget(Qt::RightDockWidgetArea, updateDockWidget);
-    resizeDocks({updateDockWidget}, {200}, Qt::Horizontal);
+    // TaoDockWidget* updateDockWidget = new TaoDockWidget("更新内容", this);
+    // updateDockWidget->setWidget(new T_UpdateWidget(this));
+    // this->addDockWidget(Qt::RightDockWidgetArea, updateDockWidget);
+    // resizeDocks({updateDockWidget}, {200}, Qt::Horizontal);
 
 
-    this->addCustomWidget(new T_BaseComponents(this));
+    // this->addCustomWidget(new T_BaseComponents(this));
 
 }
 

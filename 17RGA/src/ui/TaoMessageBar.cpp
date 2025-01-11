@@ -27,7 +27,7 @@ TaoMessageBar::TaoMessageBar(TaoMessageBarType::PositionPolicy policy, TaoMessag
     d->_pOpacity = 1;
     setFont(QFont("微软雅黑"));
     parent->installEventFilter(this);
-    d->_closeButton = new TaoIconButton(TaoIconType::Xmark, 17, d->_closeButtonWidth, 30, this);
+    d->_closeButton = new TaoIconButton(TaoIconType::TAOXmark, 17, d->_closeButtonWidth, 30, this);
     switch (d->_messageMode)
     {
     case TaoMessageBarType::Success:

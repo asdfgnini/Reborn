@@ -474,7 +474,7 @@ void TaoMessageBarPrivate::_drawSuccess(QPainter* painter)
     QFont iconFont = QFont("TaoAwesome");
     iconFont.setPixelSize(12);
     painter->setFont(iconFont);
-    painter->drawText(_leftPadding, 0, q->width(), q->height(), Qt::AlignVCenter, QChar((unsigned short)TaoIconType::Check));
+    painter->drawText(_leftPadding, 0, q->width(), q->height(), Qt::AlignVCenter, QChar((unsigned short)TaoIconType::TAOfile));
     painter->restore();
     // 文字颜色
     painter->setPen(QPen(Qt::black));
@@ -535,7 +535,7 @@ void TaoMessageBarPrivate::_drawError(QPainter* painter)
     QFont iconFont = QFont("TaoAwesome");
     iconFont.setPixelSize(13);
     painter->setFont(iconFont);
-    painter->drawText(_leftPadding + 1, 0, q->width(), q->height(), Qt::AlignVCenter, QChar((unsigned short)TaoIconType::Xmark));
+    painter->drawText(_leftPadding + 1, 0, q->width(), q->height(), Qt::AlignVCenter, QChar((unsigned short)TaoIconType::TAOXmark));
     painter->restore();
     // 文字颜色
     painter->setPen(Qt::black);

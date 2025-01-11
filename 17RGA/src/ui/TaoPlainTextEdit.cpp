@@ -86,11 +86,11 @@ void TaoPlainTextEdit::contextMenuEvent(QContextMenuEvent* event)
     QAction* action = nullptr;
     if (!isReadOnly())
     {
-        action = menu->addTaoIconAction(TaoIconType::ArrowRotateLeft, "撤销", QKeySequence::Undo);
+        action = menu->addTaoIconAction(TaoIconType::TAOfile, "撤销", QKeySequence::Undo);
         action->setEnabled(isUndoRedoEnabled() ? document()->isUndoAvailable() : false);
         connect(action, &QAction::triggered, this, &TaoPlainTextEdit::undo);
 
-        action = menu->addTaoIconAction(TaoIconType::ArrowRotateRight, "恢复", QKeySequence::Redo);
+        action = menu->addTaoIconAction(TaoIconType::TAOfile, "恢复", QKeySequence::Redo);
         action->setEnabled(isUndoRedoEnabled() ? document()->isRedoAvailable() : false);
         connect(action, &QAction::triggered, this, &TaoPlainTextEdit::redo);
         menu->addSeparator();
@@ -98,25 +98,25 @@ void TaoPlainTextEdit::contextMenuEvent(QContextMenuEvent* event)
 #ifndef QT_NO_CLIPBOARD
     if (!isReadOnly())
     {
-        action = menu->addTaoIconAction(TaoIconType::KnifeKitchen, "剪切", QKeySequence::Cut);
+        action = menu->addTaoIconAction(TaoIconType::TAOfile, "剪切", QKeySequence::Cut);
         action->setEnabled(!isReadOnly() && !textCursor().selectedText().isEmpty());
         connect(action, &QAction::triggered, this, &TaoPlainTextEdit::cut);
     }
 
-    action = menu->addTaoIconAction(TaoIconType::Copy, "复制", QKeySequence::Copy);
+    action = menu->addTaoIconAction(TaoIconType::TAOfile, "复制", QKeySequence::Copy);
     action->setEnabled(!textCursor().selectedText().isEmpty());
     connect(action, &QAction::triggered, this, &TaoPlainTextEdit::copy);
 
     if (!isReadOnly())
     {
-        action = menu->addTaoIconAction(TaoIconType::Paste, "粘贴", QKeySequence::Paste);
+        action = menu->addTaoIconAction(TaoIconType::TAOfile, "粘贴", QKeySequence::Paste);
         action->setEnabled(!isReadOnly() && !QGuiApplication::clipboard()->text().isEmpty());
         connect(action, &QAction::triggered, this, &TaoPlainTextEdit::paste);
     }
 #endif
     if (!isReadOnly())
     {
-        action = menu->addTaoIconAction(TaoIconType::DeleteLeft, "删除");
+        action = menu->addTaoIconAction(TaoIconType::TAOfile, "删除");
         action->setEnabled(!isReadOnly() && !toPlainText().isEmpty() && !textCursor().selectedText().isEmpty());
         connect(action, &QAction::triggered, this, [=](bool checked) {
             if (!textCursor().selectedText().isEmpty())

@@ -10,7 +10,6 @@
 #include <QVBoxLayout>
 
 #include "./inc/TaoBreadcrumbBar.h"
-#include "./inc/TaoNavigationRouter.h"
 #include "./inc/TaoScrollArea.h"
 #include "./inc/TaoScrollBar.h"
 #include "private/TaoScrollPagePrivate.h"
@@ -33,7 +32,6 @@ TaoScrollPage::TaoScrollPage(QWidget* parent)
             QVariantMap routeData = QVariantMap();
             routeData.insert("TaoScrollPageCheckSumKey", "BreadcrumbClicked");
             routeData.insert("LastBreadcrumbList", lastBreadcrumbList);
-            TaoNavigationRouter::getInstance()->navigationRoute(d,"onNavigationRouteBack", routeData);
         } });
     d->_pageTitleLayout = new QHBoxLayout();
     d->_pageTitleLayout->setContentsMargins(0, 0, 0, 0);
@@ -121,7 +119,6 @@ void TaoScrollPage::navigation(int widgetIndex, bool isLogRoute)
         routeData.insert("TaoScrollPageCheckSumKey", "Navigation");
         QStringList breadcrumbList = d->_breadcrumbBar->getBreadcrumbList();
         routeData.insert("TaoPageTitle", breadcrumbList.last());
-        TaoNavigationRouter::getInstance()->navigationRoute(d, "onNavigationRouteBack", routeData);
     }
     d->_breadcrumbBar->appendBreadcrumb(d->_centralWidgetMap.key(widgetIndex));
 }

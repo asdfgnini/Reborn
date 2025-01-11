@@ -13,7 +13,6 @@
 
 #include "../inc/TaoAppBar.h"
 #include "../inc/TaoIconButton.h"
-#include "../inc/TaoNavigationBar.h"
 #include "../inc/TaoText.h"
 
 TaoAppBarPrivate::TaoAppBarPrivate(QObject* parent)
@@ -79,11 +78,11 @@ void TaoAppBarPrivate::_changeMaxButtonAwesome(bool isMaximized)
 {
     if (isMaximized)
     {
-        _maxButton->setTaoIcon(TaoIconType::WindowRestore);
+        _maxButton->setTaoIcon(TaoIconType::TAOwindow_maximize);
     }
     else
     {
-        _maxButton->setTaoIcon(TaoIconType::Square);
+        _maxButton->setTaoIcon(TaoIconType::TAOexpand);
     }
 }
 
@@ -185,7 +184,7 @@ bool TaoAppBarPrivate::_containsCursorToItem(QWidget* item)
     QRectF rect = QRectF(item->mapTo(item->window(), QPoint(0, 0)), item->size());
     if (item == q)
     {
-        if (_containsCursorToItem(_routeBackButton) ||_containsCursorToItem(_navigationButton) || _containsCursorToItem(_pCustomWidget) || _containsCursorToItem(_stayTopButton) || _containsCursorToItem(_themeChangeButton) || _containsCursorToItem(_minButton) || _containsCursorToItem(_maxButton) || _containsCursorToItem(_closeButton))
+        if (_containsCursorToItem(_pCustomWidget) || _containsCursorToItem(_stayTopButton) || _containsCursorToItem(_themeChangeButton) || _containsCursorToItem(_minButton) || _containsCursorToItem(_maxButton) || _containsCursorToItem(_closeButton))
         {
             return false;
         }
@@ -201,11 +200,11 @@ void TaoAppBarPrivate::_onThemeModeChange(TaoThemeType::ThemeMode themeMode)
 {
     if (themeMode == TaoThemeType::Light)
     {
-        _themeChangeButton->setTaoIcon(TaoIconType::MoonStars);
+        _themeChangeButton->setTaoIcon(TaoIconType::TAOfile);
     }
     else
     {
-        _themeChangeButton->setTaoIcon(TaoIconType::SunBright);
+        _themeChangeButton->setTaoIcon(TaoIconType::TAOfile);
     }
 }
 
@@ -223,30 +222,15 @@ int TaoAppBarPrivate::_calculateMinimumWidth()
         width += _iconLabel->width();
         width += 10;
     }
-    bool isHasNavigationBar = false;
-    if (q->parentWidget()->findChild<TaoNavigationBar*>())
-    {
-        isHasNavigationBar = true;
-        width += 305;
-    }
-    else
-    {
-        width += 5;
-    }
+
+    width += 5;
+
     if (_pCustomWidget)
     {
         int customWidgetWidth = _pCustomWidget->width();
-        if (isHasNavigationBar)
-        {
-            if (customWidgetWidth > 300)
-            {
-                width += customWidgetWidth - 300;
-            }
-        }
-        else
-        {
-            width += customWidgetWidth;
-        }
+
+        width += customWidgetWidth;
+
     }
     QList<QAbstractButton*> buttonList = q->findChildren<QAbstractButton*>();
     for (auto button : buttonList)

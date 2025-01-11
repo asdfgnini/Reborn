@@ -22,6 +22,7 @@ T_BasePage::T_BasePage(QWidget* parent)
 
 T_BasePage::~T_BasePage()
 {
+
 }
 
 void T_BasePage::createCustomWidget(QString desText)
@@ -39,10 +40,10 @@ void T_BasePage::createCustomWidget(QString desText)
     documentationButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     //_toolButton->setPopupMode(QToolButton::MenuButtonPopup);
     documentationButton->setText("Documentation");
-    documentationButton->setTaoIcon(TaoIconType::FileDoc);
+    documentationButton->setTaoIcon(TaoIconType::TAOfile);
     TaoMenu* documentationMenu = new TaoMenu(this);
-    documentationMenu->addTaoIconAction(TaoIconType::CardsBlank, "CardsBlank");
-    documentationMenu->addTaoIconAction(TaoIconType::EarthAmericas, "EarthAmericas");
+    documentationMenu->addTaoIconAction(TaoIconType::TAOcredit_card, "CardsBlank");
+    documentationMenu->addTaoIconAction(TaoIconType::TAOfile, "EarthAmericas");
     documentationButton->setMenu(documentationMenu);
 
     TaoToolButton* sourceButton = new TaoToolButton(this);
@@ -50,16 +51,16 @@ void T_BasePage::createCustomWidget(QString desText)
     sourceButton->setIsTransparent(false);
     sourceButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     sourceButton->setText("Source");
-    sourceButton->setTaoIcon(TaoIconType::NfcSymbol);
+    sourceButton->setTaoIcon(TaoIconType::TAOfile);
     TaoMenu* sourceMenu = new TaoMenu(this);
-    sourceMenu->addTaoIconAction(TaoIconType::FireBurner, "FireBurner");
-    sourceMenu->addTaoIconAction(TaoIconType::Galaxy, "Galaxy~~~~");
+    sourceMenu->addTaoIconAction(TaoIconType::TAOfile, "FireBurner");
+    sourceMenu->addTaoIconAction(TaoIconType::TAOfile, "Galaxy~~~~");
     sourceButton->setMenu(sourceMenu);
 
     TaoToolButton* themeButton = new TaoToolButton(this);
     themeButton->setFixedSize(35, 35);
     themeButton->setIsTransparent(false);
-    themeButton->setTaoIcon(TaoIconType::MoonStars);
+    themeButton->setTaoIcon(TaoIconType::TAOfile);
     connect(themeButton, &TaoToolButton::clicked, this, [=]() {
         tTheme->setThemeMode(tTheme->getThemeMode() == TaoThemeType::Light ? TaoThemeType::Dark : TaoThemeType::Light);
     });

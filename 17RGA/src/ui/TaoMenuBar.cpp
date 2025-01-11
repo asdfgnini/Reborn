@@ -65,7 +65,7 @@ TaoMenu* TaoMenuBar::addMenu(TaoIconType::IconName icon, const QString& title)
     TaoMenu* menu = new TaoMenu(title, this);
     menu->setMenuItemHeight(27);
     menu->menuAction()->setProperty("TaoIconType", QChar((unsigned short)icon));
-    menu->menuAction()->setIcon(TaoIcon::getInstance()->getTaoIcon(TaoIconType::Broom, 1));
+    menu->menuAction()->setIcon(TaoIcon::getInstance()->getTaoIcon(TaoIconType::TAOangle_right, 1));
     QMenuBar::addAction(menu->menuAction());
     return menu;
 }
@@ -74,7 +74,7 @@ QAction* TaoMenuBar::addTaoIconAction(TaoIconType::IconName icon, const QString&
 {
     QAction* action = new QAction(text, this);
     action->setProperty("TaoIconType", QChar((unsigned short)icon));
-    action->setIcon(TaoIcon::getInstance()->getTaoIcon(TaoIconType::Broom, 1));
+    action->setIcon(TaoIcon::getInstance()->getTaoIcon(TaoIconType::TAOangle_right, 1));
     QMenuBar::addAction(action);
     return action;
 }

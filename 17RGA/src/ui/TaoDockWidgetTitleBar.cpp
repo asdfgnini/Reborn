@@ -18,11 +18,11 @@ TaoDockWidgetTitleBar::TaoDockWidgetTitleBar(QWidget* parent)
     _titleLabel->setWordWrap(false);
     _titleLabel->setTextPixelSize(13);
 
-    _floatButton = new TaoIconButton(TaoIconType::WindowRestore, 13, 32, 26, this);
+    _floatButton = new TaoIconButton(TaoIconType::TAOwindow_restore, 13, 32, 26, this);
     _floatButton->setLightHoverColor(TaoThemeColor(TaoThemeType::Light, BasicHoverAlpha));
     _floatButton->setDarkHoverColor(TaoThemeColor(TaoThemeType::Dark, BasicHoverAlpha));
     connect(_floatButton, &TaoIconButton::clicked, this, &TaoDockWidgetTitleBar::onFloatButtonClicked);
-    _closeButton = new TaoIconButton(TaoIconType::Xmark, 17, 32, 26, this);
+    _closeButton = new TaoIconButton(TaoIconType::TAOXmark, 17, 32, 26, this);
     _closeButton->setLightHoverColor(TaoThemeColor(TaoThemeType::Light, StatusDanger));
     _closeButton->setDarkHoverColor(TaoThemeColor(TaoThemeType::Dark, StatusDanger));
     connect(_closeButton, &TaoIconButton::clicked, this, &TaoDockWidgetTitleBar::onCloseButtonClicked);

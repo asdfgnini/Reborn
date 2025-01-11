@@ -40,9 +40,9 @@ void TaoSpinBox::contextMenuEvent(QContextMenuEvent* event)
     }
     menu->addSeparator();
     const uint se = stepEnabled();
-    QAction* up = menu->addTaoIconAction(TaoIconType::Plus, tr("增加"));
+    QAction* up = menu->addTaoIconAction(TaoIconType::TAOfile, tr("增加"));
     up->setEnabled(se & StepUpEnabled);
-    QAction* down = menu->addTaoIconAction(TaoIconType::Minus, tr("减少"));
+    QAction* down = menu->addTaoIconAction(TaoIconType::TAOfile, tr("减少"));
     down->setEnabled(se & StepDownEnabled);
     menu->addSeparator();
 

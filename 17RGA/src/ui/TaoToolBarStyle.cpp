@@ -112,7 +112,7 @@ void TaoToolBarStyle::drawControl(ControlElement element, const QStyleOption* op
                 QFont iconFont = QFont("TaoAwesome");
                 iconFont.setPixelSize(18);
                 painter->setFont(iconFont);
-                painter->drawText(bopt->rect, Qt::AlignCenter, QChar((unsigned short)TaoIconType::AngleRight));
+                painter->drawText(bopt->rect, Qt::AlignCenter, QChar((unsigned short)TaoIconType::TAOfile));
             }
             else
             {

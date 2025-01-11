@@ -52,7 +52,7 @@ void TaoBreadcrumbBarDelegate::paint(QPainter* painter, const QStyleOptionViewIt
         iconFont.setPixelSize(painter->font().pixelSize() * 0.785);
         painter->setFont(iconFont);
         itemRect.setX(itemRect.x() - itemRect.width() * 0.36);
-        painter->drawText(itemRect, Qt::AlignCenter, QChar((unsigned short)TaoIconType::AngleRight));
+        painter->drawText(itemRect, Qt::AlignCenter, QChar((unsigned short)TaoIconType::TAOfile));
     }
     painter->restore();
 }

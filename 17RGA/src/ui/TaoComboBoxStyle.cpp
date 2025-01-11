@@ -169,7 +169,7 @@ void TaoComboBoxStyle::drawComplexControl(ComplexControl control, const QStyleOp
                 painter->translate(expandIconRect.x() + (qreal)expandIconRect.width() / 2, expandIconRect.y() + (qreal)expandIconRect.height() / 2);
                 painter->rotate(_pExpandIconRotate);
                 painter->translate(-expandIconRect.x() - (qreal)expandIconRect.width() / 2, -expandIconRect.y() - (qreal)expandIconRect.height() / 2);
-                painter->drawText(expandIconRect, Qt::AlignCenter, QChar((unsigned short)TaoIconType::AngleDown));
+                painter->drawText(expandIconRect, Qt::AlignCenter, QChar((unsigned short)TaoIconType::TAOangle_down));
                 painter->restore();
             }
         }

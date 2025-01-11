@@ -159,13 +159,13 @@ void TaoToolButtonStyle::_drawIndicator(QPainter* painter, const QStyleOptionToo
         QFont iconFont = QFont("TaoAwesome");
         iconFont.setPixelSize(0.75 * std::min(iconSize.width(), iconSize.height()));
         painter->setFont(iconFont);
-        int indicatorWidth = painter->fontMetrics().horizontalAdvance(QChar((unsigned short)TaoIconType::AngleDown));
+        int indicatorWidth = painter->fontMetrics().horizontalAdvance(QChar((unsigned short)TaoIconType::TAOfile));
         QRect expandIconRect(toolButtonRect.right() - _contentMargin - indicatorWidth, toolButtonRect.y() + 1, indicatorWidth, toolButtonRect.height());
         painter->setPen(TaoThemeColor(_themeMode, BasicText));
         painter->translate(expandIconRect.center().x(), expandIconRect.y() + (qreal)expandIconRect.height() / 2);
         painter->rotate(_pExpandIconRotate);
         painter->translate(-expandIconRect.center().x() - 1, -expandIconRect.y() - (qreal)expandIconRect.height() / 2);
-        painter->drawText(expandIconRect, Qt::AlignCenter, QChar((unsigned short)TaoIconType::AngleDown));
+        painter->drawText(expandIconRect, Qt::AlignCenter, QChar((unsigned short)TaoIconType::TAOfile));
         painter->restore();
     }
 }
@@ -326,7 +326,7 @@ qreal TaoToolButtonStyle::_calculateExpandIndicatorWidth(const QStyleOptionToolB
     QFont iconFont = QFont("TaoAwesome");
     iconFont.setPixelSize(0.75 * std::min(iconSize.width(), iconSize.height()));
     painter->setFont(iconFont);
-    int indicatorWidth = painter->fontMetrics().horizontalAdvance(QChar((unsigned short)TaoIconType::AngleDown));
+    int indicatorWidth = painter->fontMetrics().horizontalAdvance(QChar((unsigned short)TaoIconType::TAOfile));
     painter->restore();
     return indicatorWidth;
 }

@@ -117,9 +117,9 @@ void TaoSpinBoxStyle::drawComplexControl(ComplexControl control, const QStyleOpt
         iconFont.setPixelSize(17);
         painter->setFont(iconFont);
         painter->setPen(TaoThemeColor(_themeMode, BasicText));
-        painter->drawText(addLineRect, Qt::AlignCenter, QChar((unsigned short)TaoIconType::Plus));
+        painter->drawText(addLineRect, Qt::AlignCenter, QChar((unsigned short)TaoIconType::TAOfile));
         //减小图标
-        painter->drawText(subLineRect, Qt::AlignCenter, QChar((unsigned short)TaoIconType::Minus));
+        painter->drawText(subLineRect, Qt::AlignCenter, QChar((unsigned short)TaoIconType::TAOfile));
         painter->restore();
         return;
     }
